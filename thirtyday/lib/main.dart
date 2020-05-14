@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 void main() => runApp(ThirtyDayApp());
 
 class ThirtyDayApp extends StatelessWidget {
-
   final PageController _page = PageController(initialPage: 0);
   static final IconButton _settings = IconButton(icon: const Icon(Icons.settings),
     tooltip: 'Open settings route',
@@ -21,7 +20,7 @@ class ThirtyDayApp extends StatelessWidget {
     },  
   );
   static final IconButton _profile = IconButton(icon: const Icon(Icons.face), iconSize: 30.0, padding: EdgeInsets.only(left: 28.0),
-    tooltip: 'profile',
+    tooltip: 'profile ',
     onPressed: (){
     },  
   );
@@ -69,6 +68,8 @@ class ThirtyDayApp extends StatelessWidget {
                 child: Text('Empty Body 0'),
               ),
             ),
+            
+            /*
             Center(
               child: Container(
                 child: Text('Empty Body 1'),
@@ -84,6 +85,8 @@ class ThirtyDayApp extends StatelessWidget {
                 child: Text('Empty Body 3'),
               ),
             )
+
+            */
           ],
         ),
         floatingActionButton: Container(
