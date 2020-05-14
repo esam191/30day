@@ -3,6 +3,7 @@ void main() => runApp(ThirtyDayApp());
 
 class ThirtyDayApp extends StatelessWidget {
   final PageController _page = PageController(initialPage: 0);
+
   @override
   Widget build(BuildContext context) {
     var mainApp = MaterialApp(
@@ -11,46 +12,53 @@ class ThirtyDayApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('30Day'),
           centerTitle: true,
-          leading: IconButton(icon: Icon(Icons.menu), onPressed: (){
+          leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
             print("Clicked");
-          },color: Colors.black,),
+          }, color: Colors.black,),
           elevation: 10,
           actions: <Widget>[
-            IconButton(icon: const Icon(Icons.settings) , color: Colors.black,
-            tooltip: 'Open settings route',
-            onPressed: (){
-            },)
+            IconButton(icon: const Icon(Icons.settings), color: Colors.black,
+              tooltip: 'Open settings route',
+              onPressed: () {},)
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-          color: Colors.blue, 
-          shape: CircularNotchedRectangle(),
-          child: Container(
-            height: 50,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //children: bottomAppBarButtons,
-              children: <Widget>[
-                  IconButton(icon: const Icon(Icons.home), iconSize: 30.0, padding: EdgeInsets.only(left: 28.0),
-                  tooltip: 'Go to home',
-                  onPressed: (){},
+            color: Colors.blue,
+            shape: CircularNotchedRectangle(),
+            child: Container(
+              height: 50,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //children: bottomAppBarButtons,
+                children: <Widget>[
+                  IconButton(icon: const Icon(Icons.home),
+                    iconSize: 30.0,
+                    padding: EdgeInsets.only(left: 28.0),
+                    tooltip: 'Go to home',
+                    onPressed: () {},
                   ),
-                  IconButton(icon: const Icon(Icons.share), iconSize: 30.0, padding: EdgeInsets.only(right: 28.0),
-                  tooltip: 'Go to home',
-                  onPressed: (){},
+                  IconButton(icon: const Icon(Icons.share),
+                    iconSize: 30.0,
+                    padding: EdgeInsets.only(right: 28.0),
+                    tooltip: 'Go to home',
+                    onPressed: () {},
                   ),
-                  IconButton(icon: const Icon(Icons.face), iconSize: 30.0, padding: EdgeInsets.only(left: 28.0),
-                  tooltip: 'Go to home',
-                  onPressed: (){},
+                  IconButton(icon: const Icon(Icons.face),
+                    iconSize: 30.0,
+                    padding: EdgeInsets.only(left: 28.0),
+                    tooltip: 'Go to home',
+                    onPressed: () {},
                   ),
-                  IconButton(icon: const Icon(Icons.calendar_today), iconSize: 30.0, padding: EdgeInsets.only(right: 28.0),
-                  tooltip: 'Go to home',
-                  onPressed: (){},
+                  IconButton(icon: const Icon(Icons.calendar_today),
+                    iconSize: 30.0,
+                    padding: EdgeInsets.only(right: 28.0),
+                    tooltip: 'Go to home',
+                    onPressed: () {},
                   ),
-              ],
-            ),
-          )
+                ],
+              ),
+            )
 
         ),
         body: PageView(
@@ -84,17 +92,17 @@ class ThirtyDayApp extends StatelessWidget {
           ],
         ),
         floatingActionButton: Container(
-          height: 65.0,
-          width: 65.0,
-          child: FittedBox(
-            child: FloatingActionButton(
-              onPressed: (){
-              },
-              child: Icon(Icons.add, color: Colors.black,)
-            )
-            ,)
+            height: 65.0,
+            width: 65.0,
+            child: FittedBox(
+              child: FloatingActionButton(
+                  onPressed: () {},
+                  child: Icon(Icons.add, color: Colors.black,)
+              )
+              ,)
         ),
       )
-    ,);
+      ,);
     return mainApp;
   }
+}
