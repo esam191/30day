@@ -6,8 +6,7 @@ class ThirtyDayApp extends StatelessWidget {
   static final IconButton _settings = IconButton(icon: const Icon(Icons.settings),
     tooltip: 'Open settings route',
     onPressed: (){
-    },
-  );
+    },);
   final List<Widget> appBarButtons = [_settings,];
   static final IconButton _home = IconButton(icon: const Icon(Icons.home), iconSize: 30.0, padding: EdgeInsets.only(left: 28.0),
     tooltip: 'Go to home',
@@ -17,17 +16,17 @@ class ThirtyDayApp extends StatelessWidget {
   static final IconButton _share = IconButton(icon: const Icon(Icons.share), iconSize: 30.0, padding: EdgeInsets.only(right: 28.0),
     tooltip: 'Share with community',
     onPressed: (){
-    },  
+    },
   );
   static final IconButton _profile = IconButton(icon: const Icon(Icons.face), iconSize: 30.0, padding: EdgeInsets.only(left: 28.0),
     tooltip: 'profile ',
     onPressed: (){
-    },  
+    },
   );
   static final IconButton _calendar = IconButton(icon: const Icon(Icons.calendar_today), iconSize: 30.0, padding: EdgeInsets.only(right: 28.0),
     tooltip: 'Share with community',
     onPressed: (){
-    },  
+    },
   );
   final List<Widget> bottomAppBarButtons = [_home, _share, _profile, _calendar];
 
@@ -41,7 +40,8 @@ class ThirtyDayApp extends StatelessWidget {
           centerTitle: true,
           leading: IconButton(icon: Icon(Icons.menu), onPressed: (){
             print("Clicked");
-          },),
+          },color: Colors.black,),
+          elevation: 10,
           actions: appBarButtons,
         ),
         bottomNavigationBar: BottomAppBar(
