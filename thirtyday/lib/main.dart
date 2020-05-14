@@ -3,7 +3,7 @@ void main() => runApp(ThirtyDayApp());
 
 class ThirtyDayApp extends StatelessWidget {
   final PageController _page = PageController(initialPage: 0);
-  static final IconButton _settings = IconButton(icon: const Icon(Icons.settings),
+  static final IconButton _settings = IconButton(icon: const Icon(Icons.settings) , color: Colors.black,
     tooltip: 'Open settings route',
     onPressed: (){
     },);
