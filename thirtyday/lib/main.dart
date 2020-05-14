@@ -41,10 +41,6 @@ class ThirtyDayApp extends StatelessWidget {
           centerTitle: true,
           leading: IconButton(icon: Icon(Icons.menu), onPressed: (){
             print("Clicked");
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SecondPage()),
-            );
           },color: Colors.black,),
           elevation: 10,
           actions: appBarButtons,
@@ -111,24 +107,6 @@ class ThirtyDayApp extends StatelessWidget {
   }
 }
 
-class SecondPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Page"),
-      ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text("Go back!"),
-        ),
-      ),
-        );
-  }
-}
 
 
 
