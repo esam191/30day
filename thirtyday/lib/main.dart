@@ -42,6 +42,10 @@ class ThirtyDayApp extends StatelessWidget{
       home: Scaffold(
         appBar: AppBar(
           title: Text('30Day'),
+          centerTitle: true,
+          leading: IconButton(icon: Icon(Icons.menu), onPressed: (){
+            print("Clicked");
+          },),
           actions: appBarButtons,
         ),
         bottomNavigationBar: BottomAppBar(
@@ -55,7 +59,7 @@ class ThirtyDayApp extends StatelessWidget{
               children: bottomAppBarButtons,
             ),
           )
-        
+
         ),
       )
     ,);
