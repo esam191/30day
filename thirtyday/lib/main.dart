@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 void main() => runApp(ThirtyDayApp());
 
 class ThirtyDayApp extends StatelessWidget {
-
+  
   final PageController _page = PageController(initialPage: 0);
+  final List<Widget> bottomAppBarButtons = [_home, _share, _profile, _calendar];
   static final IconButton _settings = IconButton(icon: const Icon(Icons.settings) , color: Colors.black,
     tooltip: 'Open settings route',
     onPressed: (){
@@ -29,7 +30,7 @@ class ThirtyDayApp extends StatelessWidget {
     onPressed: (){
     },
   );
-  final List<Widget> bottomAppBarButtons = [_home, _share, _profile, _calendar];
+
 
   @override
   Widget build(BuildContext context) {
@@ -106,24 +107,3 @@ class ThirtyDayApp extends StatelessWidget {
     return mainApp;
   }
 }
-
-
-
-
-/*
-void main() => runApp(MaterialApp(
-  home: Scaffold(
-    appBar: AppBar(
-      title: Text('30Day'),
-      centerTitle: true,
-    ),
-    body: Center(
-      child: Text('start a new challenge'),
-    ),
-    floatingActionButton: FloatingActionButton(
-      child: Text('+'),
-    ),
-  )
-));
-*/
-
