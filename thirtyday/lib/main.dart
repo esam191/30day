@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 void main() {
-  runApp(new MaterialApp(
-    home: new ThirtyDayApp(),
+  runApp(MaterialApp(
+    home: ThirtyDayApp(),
   ));
 }
-
 class ThirtyDayApp extends StatelessWidget {
   final PageController _page = PageController(initialPage: 0);
-
   @override
   Widget build(BuildContext context) {
       return Scaffold(
