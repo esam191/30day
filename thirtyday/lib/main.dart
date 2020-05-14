@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-void main() => runApp(ThirtyDayApp());
+void main() {
+  runApp(new MaterialApp(
+    home: new ThirtyDayApp(),
+  ));
+}
 
 class ThirtyDayApp extends StatelessWidget {
   final PageController _page = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
-    var mainApp = MaterialApp(
-      home: Scaffold(
+      return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
           title: Text('30Day'),
@@ -101,8 +104,6 @@ class ThirtyDayApp extends StatelessWidget {
               )
               ,)
         ),
-      )
-      ,);
-    return mainApp;
+      );
   }
 }
