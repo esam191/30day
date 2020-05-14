@@ -98,4 +98,3 @@ class ThirtyDayApp extends StatelessWidget {
     ,);
     return mainApp;
   }
-}
