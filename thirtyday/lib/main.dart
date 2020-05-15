@@ -1,10 +1,37 @@
 import 'package:flutter/material.dart';
-void main() {
+void main(){
   runApp(MaterialApp(
-    home: ThirtyDayApp(),
+    home: ThirtyDayApp()
   ));
 }
-class ThirtyDayApp extends StatelessWidget {
+class ThirtyDayApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: FlatButton(
+          color: Colors.blue,
+          textColor: Colors.white,
+          disabledColor: Colors.grey,
+          disabledTextColor: Colors.black,
+          padding: EdgeInsets.all(8.0),
+          splashColor: Colors.blueAccent,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ThirtyDay()),
+            );
+          },
+          child: Text(
+            "click to login",
+            style: TextStyle(fontSize: 20.0),
+          ),
+        )
+      )
+    );
+  }
+}
+class ThirtyDay extends StatelessWidget {
   final PageController _page = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
