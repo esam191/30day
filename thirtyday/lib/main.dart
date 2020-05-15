@@ -79,13 +79,13 @@ class ThirtyDay extends StatelessWidget {
                   IconButton(icon: const Icon(Icons.face),
                     iconSize: 30.0,
                     padding: EdgeInsets.only(left: 28.0),
-                    tooltip: 'Go to face',
+                    tooltip: 'Go to profile',
                     onPressed: () {},
                   ),
                   IconButton(icon: const Icon(Icons.calendar_today),
                     iconSize: 30.0,
                     padding: EdgeInsets.only(right: 28.0),
-                    tooltip: 'Go to calendar page',
+                    tooltip: 'Go to calendar',
                     onPressed: () {},
                   ),
                 ],
@@ -128,8 +128,12 @@ class ThirtyDay extends StatelessWidget {
             width: 65.0,
             child: FittedBox(
               child: FloatingActionButton(
-                  onPressed: () {},
+                  tooltip: 'Add a new challenge',
+                  onPressed: () {
+                    /// TODO: add code to enter challenge
+                  },
                   child: Icon(Icons.add, color: Colors.black,)
+
               )
               ,)
         ),
