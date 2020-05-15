@@ -99,12 +99,19 @@ class ThirtyDay extends StatelessWidget {
             print('Page Changes to index $int');
           },
           children: <Widget>[
+            Container(
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Text('Challenges'),
+              ),
+            )
+            /*
             Center(
               child: Container(
                 child: Text('Empty Body 0'),
               ),
             ),
-            /*
+
             Center(
               child: Container(
                 child: Text('Empty Body 1'),
