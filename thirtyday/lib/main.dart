@@ -101,8 +101,9 @@ class ThirtyDay extends StatelessWidget {
           children: <Widget>[
             Container(
               child: Align(
-                alignment: Alignment.topCenter,
-                child: Text('Challenges'),
+                alignment: Alignment(0.00, -.85),
+                child: Text(
+                    'Challenges'),
               ),
             )
             /*
