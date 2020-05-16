@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-//import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 
 void main(){
   runApp(MaterialApp(
@@ -59,7 +59,7 @@ class ThirtyDayApp extends StatelessWidget{
               
           },
           showSkipButton: true,
-          skip: const Icon(Icons.skip_next),
+          skip: const Text('skip'),
           next: const Icon(Icons.navigate_next),
           done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
         ),
@@ -154,8 +154,8 @@ class ThirtyDay extends StatelessWidget {
             Container(
               child: Align(
                 alignment: Alignment(-.75, -.9),
-                child:  //print(new DateFormat("dd-MM-yyyy").format(DateTime.now()));
-                Text( 'Challenges', style: TextStyle(color: Colors.black, fontSize: 25),
+                child: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),
+                //Text( 'Challenges', style: TextStyle(color: Colors.black, fontSize: 25),
                 ),
               ),
             )
