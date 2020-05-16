@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 void main(){
   runApp(MaterialApp(
-    home: ThirtyDayApp()
+    home: ThirtyDayApp(),
+    routes: <String, WidgetBuilder> {
+      "/SecondPage": (BuildContext context) => ThirtyDay()
+    }
   ));
 }
 class ThirtyDayApp extends StatelessWidget{
@@ -65,11 +68,7 @@ class ThirtyDayApp extends StatelessWidget{
           disabledTextColor: Colors.black,
           padding: EdgeInsets.all(8.0),
           splashColor: Colors.blueAccent,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ThirtyDay()),
-            );
+          onPressed: () {Navigator.of(context).pushNamed("/SecondPage");
           },
           child: Text(
             "click to login",
@@ -88,7 +87,7 @@ class ThirtyDay extends StatelessWidget {
       return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
-          title: Text('30Day'),
+          title: Text('30Day'), backgroundColor: Colors.indigo,
           centerTitle: true,
           leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
             print("Clicked");
@@ -101,7 +100,7 @@ class ThirtyDay extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-            color: Colors.blue,
+            color: Colors.indigo,
             shape: CircularNotchedRectangle(),
             child: Container(
               height: 50,
@@ -152,9 +151,10 @@ class ThirtyDay extends StatelessWidget {
           children: <Widget>[
             Container(
               child: Align(
-                alignment: Alignment(0.00, -.85),
+                alignment: Alignment(-.75, -.9),
                 child: Text(
-                    'Challenges'),
+                    'Challenges', style: TextStyle(color: Colors.black, fontSize: 25),
+                ),
               ),
             )
             /*
@@ -187,15 +187,11 @@ class ThirtyDay extends StatelessWidget {
             width: 65.0,
             child: FittedBox(
               child: FloatingActionButton(
-<<<<<<< HEAD
+
                   tooltip: 'Add a new challenge',
                   onPressed: () {
                     /// TODO: add code to enter challenge
                   },
-=======
-                  
-                  onPressed: () {},
->>>>>>> working
                   child: Icon(Icons.add, color: Colors.black,)
 
               )
