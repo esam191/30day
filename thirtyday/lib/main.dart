@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 void main(){
   runApp(MaterialApp(
-    home: ThirtyDayApp()
+    home: ThirtyDayApp(),
+    routes: <String, WidgetBuilder> {
+      "/SecondPage": (BuildContext context) => ThirtyDay()
+    }
   ));
 }
 class ThirtyDayApp extends StatelessWidget{
@@ -10,17 +13,13 @@ class ThirtyDayApp extends StatelessWidget{
     return Scaffold(
       body: Center(
         child: FlatButton(
-          color: Colors.blue,
+          color: Colors.blueAccent,
           textColor: Colors.white,
           disabledColor: Colors.grey,
           disabledTextColor: Colors.black,
           padding: EdgeInsets.all(8.0),
           splashColor: Colors.blueAccent,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ThirtyDay()),
-            );
+          onPressed: () {Navigator.of(context).pushNamed("/SecondPage");
           },
           child: Text(
             "click to login",
@@ -38,7 +37,7 @@ class ThirtyDay extends StatelessWidget {
       return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
-          title: Text('30Day'),
+          title: Text('30Day'), backgroundColor: Colors.indigo,
           centerTitle: true,
           leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
             print("Clicked");
@@ -51,7 +50,7 @@ class ThirtyDay extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-            color: Colors.blue,
+            color: Colors.blueAccent,
             shape: CircularNotchedRectangle(),
             child: Container(
               height: 50,
