@@ -50,7 +50,7 @@ class ThirtyDay extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-            color: Colors.blueAccent,
+            color: Colors.indigo,
             shape: CircularNotchedRectangle(),
             child: Container(
               height: 50,
@@ -100,9 +100,10 @@ class ThirtyDay extends StatelessWidget {
           children: <Widget>[
             Container(
               child: Align(
-                alignment: Alignment(0.00, -.85),
+                alignment: Alignment(-.75, -.9),
                 child: Text(
-                    'Challenges'),
+                    'Challenges', style: TextStyle(color: Colors.black, fontSize: 25),
+                ),
               ),
             )
             /*
@@ -135,7 +136,7 @@ class ThirtyDay extends StatelessWidget {
             width: 65.0,
             child: FittedBox(
               child: FloatingActionButton(
-                  tooltip: 'Add a new challenge',
+                  tooltip: 'Add a new challenge', backgroundColor: Colors.blueGrey,
                   onPressed: () {
                     /// TODO: add code to enter challenge
                   },
