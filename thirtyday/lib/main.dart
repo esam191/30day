@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:introduction_screen/introduction_screen.dart';
 void main(){
   runApp(MaterialApp(
     home: ThirtyDayApp()
@@ -7,9 +8,57 @@ void main(){
 class ThirtyDayApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+     return Scaffold(
       body: Center(
-        child: FlatButton(
+        child: IntroductionScreen(
+          pages: <PageViewModel> [
+              PageViewModel(
+              title: "30Day Challenge App",
+              body: "Click to create a profile",
+              image: Center(
+                child: Image.network("https://drive.google.com/file/d/1JHK7K-GpJZLLz_w58TIf4En366WnR8oo/view?usp=sharing", height: 175.0),
+              ),
+            ),
+            PageViewModel(
+              title: "Complete 30Day Challenge and earn rewards!",
+              body: "W",
+              image: const Center(child: Icon(Icons.android)),
+              footer: RaisedButton(
+                onPressed: () {
+                  // On button presed
+                },
+                child: const Text("Let's Go !"),
+              ),
+            ),
+              PageViewModel
+              (
+                title: "Title of first page",
+                bodyWidget: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text("Click on "),
+                  Icon(Icons.edit),
+                  Text(" to edit a post"),
+                  ],
+                ),
+                image: const Center(child: Icon(Icons.android)),
+              ), 
+          ],
+          onDone: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ThirtyDay()),
+            );
+          },
+          onSkip: (){
+              
+          },
+          showSkipButton: true,
+          skip: const Icon(Icons.skip_next),
+          next: const Icon(Icons.navigate_next),
+          done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
+        ),
+        /*FlatButton(
           color: Colors.blue,
           textColor: Colors.white,
           disabledColor: Colors.grey,
@@ -27,9 +76,10 @@ class ThirtyDayApp extends StatelessWidget{
             style: TextStyle(fontSize: 20.0),
           ),
         )
+        */
       )
     );
-  }
+  } 
 }
 class ThirtyDay extends StatelessWidget {
   final PageController _page = PageController(initialPage: 0);
@@ -98,6 +148,7 @@ class ThirtyDay extends StatelessWidget {
           onPageChanged: (int) {
             print('Page Changes to index $int');
           },
+          
           children: <Widget>[
             Center(
               child: Container(
@@ -128,6 +179,7 @@ class ThirtyDay extends StatelessWidget {
             width: 65.0,
             child: FittedBox(
               child: FloatingActionButton(
+                  
                   onPressed: () {},
                   child: Icon(Icons.add, color: Colors.black,)
               )
