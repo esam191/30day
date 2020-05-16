@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+//import 'package:intl/intl.dart';
+
 void main(){
   runApp(MaterialApp(
     home: ThirtyDayApp(),
@@ -152,8 +154,8 @@ class ThirtyDay extends StatelessWidget {
             Container(
               child: Align(
                 alignment: Alignment(-.75, -.9),
-                child: Text(
-                    'Challenges', style: TextStyle(color: Colors.black, fontSize: 25),
+                child:  //print(new DateFormat("dd-MM-yyyy").format(DateTime.now()));
+                Text( 'Challenges', style: TextStyle(color: Colors.black, fontSize: 25),
                 ),
               ),
             )
