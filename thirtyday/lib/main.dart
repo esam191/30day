@@ -18,16 +18,22 @@ class ThirtyDayApp extends StatelessWidget{
         child: IntroductionScreen(
           pages: <PageViewModel> [
               PageViewModel(
-              title: "30Day Challenge App",
-              body: "Click to create a profile",
-              image: Center(
-                child: Image.network("https://drive.google.com/file/d/1JHK7K-GpJZLLz_w58TIf4En366WnR8oo/view?usp=sharing", height: 175.0),
+              title: "Hello there.",
+              body: "Challenge tracking so simply you'll actually use it.",
+                image: const Center(child: Icon(Icons.calendar_today )),
+              decoration: const PageDecoration(
+                pageColor: Colors.lightBlueAccent,
+                titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0),
+                bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),
               ),
             ),
             PageViewModel(
               title: "Complete 30Day Challenge and earn rewards!",
               body: "W",
-              image: const Center(child: Icon(Icons.android)),
+                decoration: const PageDecoration(
+                  pageColor: Colors.greenAccent,
+                ),
+              image: const Center(child: Icon(Icons.calendar_today )),
               footer: RaisedButton(
                 onPressed: () {
                   // On button presed
@@ -35,9 +41,11 @@ class ThirtyDayApp extends StatelessWidget{
                 child: const Text("Let's Go !"),
               ),
             ),
-              PageViewModel
-              (
+              PageViewModel(
                 title: "Title of first page",
+                decoration: const PageDecoration(
+                  pageColor: Colors.redAccent,
+                ),
                 bodyWidget: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
@@ -49,19 +57,14 @@ class ThirtyDayApp extends StatelessWidget{
                 image: const Center(child: Icon(Icons.android)),
               ), 
           ],
-          onDone: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ThirtyDay()),
-            );
-          },
+          onDone: (){ Navigator.of(context).pushNamed("/SecondPage"); },
           onSkip: (){
               
           },
           showSkipButton: true,
-          skip: const Text('skip'),
+          skip: const Text('SKIP'),
           next: const Icon(Icons.navigate_next),
-          done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
+          done: const Text("DONE", style: TextStyle(fontWeight: FontWeight.w600)),
         ),
         /*FlatButton(
           color: Colors.blue,
@@ -158,6 +161,12 @@ class ThirtyDay extends StatelessWidget {
                 //Text( 'Challenges', style: TextStyle(color: Colors.black, fontSize: 25),
                 ),
               ),
+            ),
+            Container(
+              child: Align(
+                alignment: Alignment( -.75,-.9),
+                child: Text( 'Challenges', style: TextStyle(color: Colors.black, fontSize: 25)),
+              ),
             )
             /*
             Center(
@@ -191,6 +200,7 @@ class ThirtyDay extends StatelessWidget {
               child: FloatingActionButton(
 
                   tooltip: 'Add a new challenge',
+                  backgroundColor: Colors.indigo,
                   onPressed: () {
                     /// TODO: add code to enter challenge
                   },
@@ -202,3 +212,5 @@ class ThirtyDay extends StatelessWidget {
       );
   }
 }
+
+
