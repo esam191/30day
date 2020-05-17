@@ -18,69 +18,49 @@ class ThirtyDayApp extends StatelessWidget{
         child: IntroductionScreen(
           pages: <PageViewModel> [
               PageViewModel(
-              title: "Hello there.",
-              body: "Challenge tracking so simply you'll actually use it.",
-                image: const Center(child: Icon(Icons.calendar_today )),
+              title: "Welcome to 30Day.",
+              body: "Challenge tracking so simple you'll actually use it.",
+                image: Center(child: Image.asset("images/img1.png", height: 250.0)),
               decoration: const PageDecoration(
                 pageColor: Colors.lightBlueAccent,
-                titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0),
-                bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),
+                titleTextStyle: TextStyle( fontWeight: FontWeight.w700 ,fontSize: 35.0),
+                bodyTextStyle: TextStyle( fontWeight: FontWeight.w700 ,fontSize: 20.0),
               ),
             ),
             PageViewModel(
-              title: "Complete 30Day Challenge and earn rewards!",
-              body: "W",
-                decoration: const PageDecoration(
-                  pageColor: Colors.greenAccent,
-                ),
-              image: const Center(child: Icon(Icons.calendar_today )),
-              footer: RaisedButton(
-                onPressed: () {
-                  // On button presed
-                },
-                child: const Text("Let's Go !"),
-              ),
-            ),
-              PageViewModel(
-                title: "Title of first page",
+              title: "Make it a game.",
+              body: "Earn rewards for every challenge you complete.",
+              image: Center(child: Image.asset("images/img3.png", height: 250.0)),
                 decoration: const PageDecoration(
                   pageColor: Colors.redAccent,
+                  titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0),
+                  bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),
                 ),
-                bodyWidget: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text("Click on "),
-                  Icon(Icons.edit),
-                  Text(" to edit a post"),
-                  ],
+            ),
+              PageViewModel(
+                title: "Start tracking.",
+                body: "Use the '+' sign to add a new challenge once logged in.",
+                image: Center(child: Image.asset("images/img2.png", height: 250.0)),
+                decoration: const PageDecoration(
+                  pageColor: Colors.greenAccent,
+                  titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0),
+                  bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),
                 ),
-                image: const Center(child: Icon(Icons.android)),
+                footer: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Enter a username'
+                  ),
+                ),
               ), 
           ],
           onDone: (){ Navigator.of(context).pushNamed("/SecondPage"); },
           onSkip: (){
-              
           },
           showSkipButton: true,
           skip: const Text('SKIP'),
           next: const Icon(Icons.navigate_next),
           done: const Text("DONE", style: TextStyle(fontWeight: FontWeight.w600)),
         ),
-        /*FlatButton(
-          color: Colors.blue,
-          textColor: Colors.white,
-          disabledColor: Colors.grey,
-          disabledTextColor: Colors.black,
-          padding: EdgeInsets.all(8.0),
-          splashColor: Colors.blueAccent,
-          onPressed: () {Navigator.of(context).pushNamed("/SecondPage");
-          },
-          child: Text(
-            "click to login",
-            style: TextStyle(fontSize: 20.0),
-          ),
-        )
-        */
       )
     );
   } 
