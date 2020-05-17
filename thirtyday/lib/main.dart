@@ -69,7 +69,7 @@ class ThirtyDayApp extends StatelessWidget{
                           shadowColor: Colors.black12,
                           color: Colors.green,
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () { Navigator.of(context).pushNamed("/SecondPage");},
                             child: Center(
                               child: Text('SIGN UP'),
                             ) ,
