@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
 
 void main(){
@@ -47,11 +48,15 @@ class ThirtyDayApp extends StatelessWidget{
                   titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0, color: Colors.white),
                   bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0, color: Colors.white),
                 ),
-                footer: TextFormField(
+                footer: GoogleSignInButton(
+                  onPressed: () {/* ... */},
+                  darkMode: true, // default: false
+                ),
+               /* TextFormField(
                   decoration: InputDecoration(
                     labelText: 'Enter a username'
                   ),
-                ),
+                ), */
               ), 
           ],
           onDone: (){ Navigator.of(context).pushNamed("/SecondPage"); },
