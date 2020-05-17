@@ -48,15 +48,17 @@ class ThirtyDayApp extends StatelessWidget{
                   titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0, color: Colors.white),
                   bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0, color: Colors.white),
                 ),
-                footer: GoogleSignInButton(
-                  onPressed: () {/* ... */},
-                  darkMode: true, // default: false
-                ),
-               /* TextFormField(
+                footer: TextFormField(
                   decoration: InputDecoration(
                     labelText: 'Enter a username'
                   ),
-                ), */
+                ),
+                /* GoogleSignInButton(
+                  onPressed: () { },
+                  splashColor: Colors.white,
+                  darkMode: true,
+                  // setting splashColor to Colors.transparent will remove button ripple effect.
+                ) */
               ), 
           ],
           onDone: (){ Navigator.of(context).pushNamed("/SecondPage"); },
@@ -65,7 +67,7 @@ class ThirtyDayApp extends StatelessWidget{
           showSkipButton: true,
           skip: const Text('SKIP'),
           next: const Icon(Icons.navigate_next),
-          done: const Text("DONE", style: TextStyle(fontWeight: FontWeight.w600)),
+          done: const Text("LOG IN", style: TextStyle(fontWeight: FontWeight.w600)),
         ),
       )
     );
