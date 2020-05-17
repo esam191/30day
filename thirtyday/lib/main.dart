@@ -48,11 +48,38 @@ class ThirtyDayApp extends StatelessWidget{
                   titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0, color: Colors.white),
                   bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0, color: Colors.white),
                 ),
-                footer: TextFormField(
-                  decoration: InputDecoration(
-                    labelText: 'Enter a username'
+                footer: Container(
+                  child: Column(
+                    children: <Widget>[
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'USERNAME',
+                          labelStyle: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                          )
+                        ),
+                      ),
+                      SizedBox(height: 20.0),
+                      Container(
+                        height: 30.0,
+                        child: Material(
+                          borderRadius: BorderRadius.circular(10.0),
+                          shadowColor: Colors.black12,
+                          color: Colors.green,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Center(
+                              child: Text('SIGN UP'),
+                            ) ,
+                          ),
+                        )
+                      )
+                    ],
                   ),
-                ),
+                )
+
                 /* GoogleSignInButton(
                   onPressed: () { },
                   splashColor: Colors.white,
