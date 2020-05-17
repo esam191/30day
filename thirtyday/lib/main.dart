@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:intl/intl.dart';
 
+
 void main(){
   runApp(MaterialApp(
     home: ThirtyDayApp(),
@@ -23,8 +24,8 @@ class ThirtyDayApp extends StatelessWidget{
                 image: Center(child: Image.asset("images/img1.png", height: 250.0)),
               decoration: const PageDecoration(
                 pageColor: Colors.lightBlueAccent,
-                titleTextStyle: TextStyle( fontWeight: FontWeight.w700 ,fontSize: 35.0),
-                bodyTextStyle: TextStyle( fontWeight: FontWeight.w700 ,fontSize: 20.0),
+                titleTextStyle: TextStyle(fontWeight: FontWeight.w700 ,fontSize: 35.0, color: Colors.white),
+                bodyTextStyle: TextStyle( fontWeight: FontWeight.w700 ,fontSize: 20.0, color: Colors.white),
               ),
             ),
             PageViewModel(
@@ -33,8 +34,8 @@ class ThirtyDayApp extends StatelessWidget{
               image: Center(child: Image.asset("images/img3.png", height: 250.0)),
                 decoration: const PageDecoration(
                   pageColor: Colors.redAccent,
-                  titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0),
-                  bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),
+                  titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0, color: Colors.white),
+                  bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0, color: Colors.white),
                 ),
             ),
               PageViewModel(
@@ -43,8 +44,8 @@ class ThirtyDayApp extends StatelessWidget{
                 image: Center(child: Image.asset("images/img2.png", height: 250.0)),
                 decoration: const PageDecoration(
                   pageColor: Colors.greenAccent,
-                  titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0),
-                  bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),
+                  titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0, color: Colors.white),
+                  bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0, color: Colors.white),
                 ),
                 footer: TextFormField(
                   decoration: InputDecoration(
