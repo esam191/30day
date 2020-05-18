@@ -3,7 +3,6 @@ import 'package:introduction_screen/introduction_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
-
 void main(){
   runApp(MaterialApp(
     home: ThirtyDayApp(),
