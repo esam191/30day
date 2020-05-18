@@ -24,7 +24,7 @@ class ThirtyDayApp extends StatelessWidget{
                 image: Center(child: Image.asset("images/img1.png", height: 250.0)),
               decoration: const PageDecoration(
                 pageColor: Colors.lightBlueAccent,
-                titleTextStyle: TextStyle(fontWeight: FontWeight.w700 ,fontSize: 35.0, color: Colors.white),
+                titleTextStyle: TextStyle(fontWeight: FontWeight.w900 ,fontSize: 35.0, color: Colors.white),
                 bodyTextStyle: TextStyle( fontWeight: FontWeight.w700 ,fontSize: 20.0, color: Colors.white),
               ),
             ),
@@ -34,7 +34,7 @@ class ThirtyDayApp extends StatelessWidget{
               image: Center(child: Image.asset("images/img3.png", height: 250.0)),
                 decoration: const PageDecoration(
                   pageColor: Colors.redAccent,
-                  titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0, color: Colors.white),
+                  titleTextStyle: TextStyle(fontWeight: FontWeight.w900, fontSize: 40.0, color: Colors.white),
                   bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0, color: Colors.white),
                 ),
             ),
@@ -44,7 +44,7 @@ class ThirtyDayApp extends StatelessWidget{
                 image: Center(child: Image.asset("images/img2.png", height: 250.0)),
                 decoration: const PageDecoration(
                   pageColor: Colors.greenAccent,
-                  titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 40.0, color: Colors.white),
+                  titleTextStyle: TextStyle(fontWeight: FontWeight.w900, fontSize: 40.0, color: Colors.white),
                   bodyTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0, color: Colors.white),
                 ),
                 footer: Container(
@@ -88,8 +88,6 @@ class ThirtyDayApp extends StatelessWidget{
               ), 
           ],
           onDone: (){ Navigator.of(context).pushNamed("/SecondPage"); },
-          onSkip: (){
-          },
           showSkipButton: true,
           skip: const Text('SKIP'),
           next: const Icon(Icons.navigate_next),
