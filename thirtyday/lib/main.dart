@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:intl/intl.dart';
+import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
-
 void main(){
   runApp(MaterialApp(
     home: ThirtyDayApp(),
@@ -98,27 +98,28 @@ class ThirtyDayApp extends StatelessWidget{
   } 
 }
 class ThirtyDay extends StatelessWidget {
-
   final PageController _page = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
       return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
-          title: Text('30Day'), backgroundColor: Color(0xFF303030),
+          title: Text('30Day', style: TextStyle(color: Colors.black)), 
+          backgroundColor: Colors.white,
           centerTitle: true,
-          leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
-            print("Clicked");
-          }, color: Colors.white,),
+          leading: IconButton(icon: Icon(OMIcons.menu, color: Colors.black),
+          onPressed: () {
+            //print("Clicked");
+          },),
           elevation: 10,
           actions: <Widget>[
-            IconButton(icon: const Icon(Icons.settings), color: Colors.white,
+            IconButton(icon: Icon(OMIcons.settings, color: Colors.black,),
               tooltip: 'Open settings route',
               onPressed: () {},)
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-            color: Color(0xFF303030),
+            color: Colors.white,
             shape: CircularNotchedRectangle(),
             child: Container(
               height: 50,
@@ -127,8 +128,7 @@ class ThirtyDay extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 //children: bottomAppBarButtons,
                 children: <Widget>[
-                  IconButton(icon: const Icon(Icons.home),
-                    color: Colors.white ,
+                  IconButton(icon: const Icon(OMIcons.home),
                     iconSize: 30.0,
                     padding: EdgeInsets.only(left: 28.0),
                     tooltip: 'Go to home',
@@ -138,23 +138,19 @@ class ThirtyDay extends StatelessWidget {
                       Navigator.pop(context); // MOVE this to settings--logout
                     },
                   ),
-                  IconButton(icon: const Icon(Icons.share),
-                    color: Colors.white,
+                  IconButton(icon: const Icon(OMIcons.share),
                     iconSize: 30.0,
                     padding: EdgeInsets.only(right: 28.0),
                     tooltip: 'Go to share',
                     onPressed: () {},
                   ),
-                  IconButton(icon: const Icon(Icons.face),
-                    color: Colors.white,
+                  IconButton(icon: const Icon(OMIcons.face),
                     iconSize: 30.0,
                     padding: EdgeInsets.only(left: 28.0),
                     tooltip: 'Go to profile',
                     onPressed: () {},
                   ),
-                  IconButton(icon: const Icon(Icons.calendar_today),
-                    color: Colors.white,
-                    
+                  IconButton(icon: const Icon(OMIcons.calendarToday),                    
                     iconSize: 30.0,
                     padding: EdgeInsets.only(right: 28.0),
                     tooltip: 'Go to calendar',
@@ -182,7 +178,7 @@ class ThirtyDay extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                              ListTile(
-                              leading: Icon(Icons.whatshot, color: Colors.deepOrange,),
+                              leading: Icon(OMIcons.whatshot, color: Colors.deepOrange,),
                               title: Text('Challenges'),
                               //subtitle: Text('Welcome to the 30Day. '),
                               subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),
@@ -208,19 +204,23 @@ class ThirtyDay extends StatelessWidget {
                     ),
                   ),
                   
-                  Card(child: ListTile(
+                  Card(
+                    color: Colors.white70,
+                    child: ListTile(
                         leading: Text('1'),
                         title: Text('Todo ') ,
                         subtitle: Text('Run 10 miles'),
-                        trailing: Icon(Icons.check_box),
+                        trailing: Icon(OMIcons.checkBox),
                         isThreeLine: true,
                         ),
                       ),
-                      Card(child: ListTile(
+                  Card(
+                    color: Colors.white70,
+                      child: ListTile(
                         leading: Text('2'),
                         title: Text('challenge') ,
                         subtitle: Text('Sleep 8 hours'),
-                        trailing: Icon(Icons.check_box),
+                        trailing: Icon(OMIcons.checkBox),
                         isThreeLine: true,
                         ),
                       )
@@ -246,8 +246,6 @@ class ThirtyDay extends StatelessWidget {
                       )
                   ])
                  ,)
-
-
                  */
               ,)
           ],
@@ -259,11 +257,11 @@ class ThirtyDay extends StatelessWidget {
               child: FloatingActionButton(
                   
                   tooltip: 'Add a new challenge',
-                  backgroundColor: Color(0xFF303030),
+                  backgroundColor: Colors.white,
                   onPressed: () {
                     /// TODO: add code to enter challenge
                   },
-                  child: Icon(Icons.add, color: Colors.white,)
+                  child: Icon(OMIcons.add, color: Colors.black,)
 
               )
               ,)
