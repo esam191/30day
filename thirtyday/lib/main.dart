@@ -106,9 +106,10 @@ class ThirtyDay extends StatelessWidget {
       return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
-          title: Text('30Day', style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.black87,
+          title: Text('30Day', style: TextStyle(color: Colors.black)),
+          backgroundColor: Colors.white,
           centerTitle: true,
+          iconTheme: IconThemeData(color: Colors.black),
           /*
           leading: IconButton(icon: Icon(OMIcons.menu, color: Colors.black),
           onPressed: () {
@@ -123,6 +124,7 @@ class ThirtyDay extends StatelessWidget {
           */
         ),
         drawer: MainDrawer(),
+        
         bottomNavigationBar: BottomAppBar(
             color: Colors.white,
             shape: CircularNotchedRectangle(),

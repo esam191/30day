@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:outline_material_icons/outline_material_icons.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Drawer(
+      
       child: Column(
         children: <Widget>[
           Container(
             width: double.infinity,
             padding: EdgeInsets.all(20),
-            color: Colors.black87,
+            color: Colors.white70,
             child: Center(
               child: Column(
                 children: <Widget>[
@@ -28,14 +30,14 @@ class MainDrawer extends StatelessWidget {
                 'Firstname Lastname',
                 style: TextStyle(
                     fontSize: 22,
-                    color: Colors.white
+                    color: Colors.black
                 ),
               ),
               Text(
                 'username',
                 style: TextStyle(
                     fontSize: 22,
-                    color: Colors.white
+                    color: Colors.black
                 ),
               ),
                 ],
@@ -43,7 +45,7 @@ class MainDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.person),
+            leading: Icon(OMIcons.person),
             title: Text(
               'Profile',
               style: TextStyle( fontSize: 18,),
@@ -51,7 +53,7 @@ class MainDrawer extends StatelessWidget {
             onTap: null,
           ),
           ListTile(
-            leading: Icon(Icons.toys),
+            leading: Icon(OMIcons.toys),
             title: Text(
               'Badges',
               style: TextStyle( fontSize: 18,),
@@ -59,7 +61,7 @@ class MainDrawer extends StatelessWidget {
             onTap: null,
           ),
           ListTile(
-            leading: Icon(Icons.settings),
+            leading: Icon(OMIcons.settings),
             title: Text(
               'Settings',
               style: TextStyle( fontSize: 18,),
@@ -67,7 +69,7 @@ class MainDrawer extends StatelessWidget {
             onTap: null,
           ),
           ListTile(
-            leading: Icon(Icons.arrow_back),
+            leading: Icon(OMIcons.arrowBack),
             title: Text(
               'Profile',
               style: TextStyle( fontSize: 18,),
