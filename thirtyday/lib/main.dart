@@ -3,6 +3,8 @@ import 'package:introduction_screen/introduction_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+import 'package:thirtyday/maindrawer.dart';
+
 void main(){
   runApp(MaterialApp(
     home: ThirtyDayApp(),
@@ -104,9 +106,10 @@ class ThirtyDay extends StatelessWidget {
       return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
-          title: Text('30Day', style: TextStyle(color: Colors.black)), 
-          backgroundColor: Colors.white,
+          title: Text('30Day', style: TextStyle(color: Colors.white)),
+          backgroundColor: Colors.black54,
           centerTitle: true,
+          /*
           leading: IconButton(icon: Icon(OMIcons.menu, color: Colors.black),
           onPressed: () {
             //print("Clicked");
@@ -117,7 +120,9 @@ class ThirtyDay extends StatelessWidget {
               tooltip: 'Open settings route',
               onPressed: () {},)
           ],
+          */
         ),
+        drawer: MainDrawer(),
         bottomNavigationBar: BottomAppBar(
             color: Colors.white,
             shape: CircularNotchedRectangle(),
