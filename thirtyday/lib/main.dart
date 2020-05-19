@@ -105,7 +105,7 @@ class ThirtyDay extends StatelessWidget {
       return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
-          title: Text('30Day'), backgroundColor: Colors.blueAccent,
+          title: Text('30Day'), backgroundColor: Color(0xFF303030),
           centerTitle: true,
           leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
             print("Clicked");
@@ -118,7 +118,7 @@ class ThirtyDay extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-            color: Colors.blueAccent,
+            color: Color(0xFF303030),
             shape: CircularNotchedRectangle(),
             child: Container(
               height: 50,
@@ -259,7 +259,7 @@ class ThirtyDay extends StatelessWidget {
               child: FloatingActionButton(
                   
                   tooltip: 'Add a new challenge',
-                  backgroundColor: Colors.blueAccent,
+                  backgroundColor: Color(0xFF303030),
                   onPressed: () {
                     /// TODO: add code to enter challenge
                   },
