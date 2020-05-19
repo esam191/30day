@@ -9,7 +9,8 @@ void main(){
   runApp(MaterialApp(
     home: ThirtyDayApp(),
     routes: <String, WidgetBuilder> {
-      "/SecondPage": (BuildContext context) => ThirtyDay()
+      "/SecondPage": (BuildContext context) => ThirtyDay(),
+      "/IntroPage": (BuildContext context) => ThirtyDayApp(),
     }
   ));
 }

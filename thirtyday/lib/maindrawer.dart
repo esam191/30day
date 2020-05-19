@@ -12,7 +12,7 @@ class MainDrawer extends StatelessWidget {
           Container(
             width: double.infinity,
             padding: EdgeInsets.all(20),
-            color: Colors.white70,
+            color: Color(0xFFE0E0E0),
             child: Center(
               child: Column(
                 children: <Widget>[
@@ -23,7 +23,7 @@ class MainDrawer extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                        image: NetworkImage(''), fit: BoxFit.fill),
+                        image: NetworkImage('https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png'), fit: BoxFit.fill),
                       )
                     ),
               Text(
@@ -71,10 +71,10 @@ class MainDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(OMIcons.arrowBack),
             title: Text(
-              'Profile',
+              'Log Out',
               style: TextStyle( fontSize: 18,),
             ),
-            onTap: null,
+            onTap: () { Navigator.of(context).pushNamed("/IntroPage");},
           )
         ],
       ),
