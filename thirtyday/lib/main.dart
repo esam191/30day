@@ -104,7 +104,7 @@ class ThirtyDay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       return Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         appBar: AppBar(
           title: Text('30Day', style: TextStyle(color: Colors.black)),
           backgroundColor: Colors.white,
@@ -135,41 +135,49 @@ class ThirtyDay extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 //children: bottomAppBarButtons,
                 children: <Widget>[
-                  IconButton(icon: const Icon(OMIcons.home),
-                    color: Colors.black54,
-                    iconSize: 30.0,
-                    padding: EdgeInsets.only(left: 50.0),
-                    tooltip: 'Go to home',
-                    onPressed: () {
-                      /// Go back to login page.
-                      /// TODO: put this pop inside settings 
-                      Navigator.pop(context); // MOVE this to settings--logout
-                    },
+                  Expanded(
+                      child: IconButton(icon: const Icon(OMIcons.home),
+                      color: Colors.black54,
+                      iconSize: 30.0,
+                      //padding: EdgeInsets.only(left: 28.0),
+                      tooltip: 'Go to home',
+                      onPressed: () {
+                        /// Go back to login page.
+                        /// TODO: put this pop inside settings 
+                        Navigator.pop(context); // MOVE this to settings--logout
+                      },
+                    ),
                   ),
-                  /*
-                  IconButton(icon: const Icon(OMIcons.share),
-                    color: Colors.black54,
-                    iconSize: 30.0,
-                    padding: EdgeInsets.only(right: 28.0),
-                    tooltip: 'Go to share',
-                    onPressed: () {},
+                  Expanded(child: IconButton(icon: const Icon(OMIcons.share),
+                      color: Colors.black54,
+                      iconSize: 30.0,
+                      //padding: EdgeInsets.only(right: 28.0),
+                      tooltip: 'Go to share',
+                      onPressed: () {},
+                    ),
                   ),
-                  
-                  IconButton(icon: const Icon(OMIcons.face),
-                    color: Colors.black54,
-                    iconSize: 30.0,
-                    padding: EdgeInsets.only(left: 28.0),
-                    tooltip: 'Go to profile',
-                    onPressed: () {},
+                  Expanded(child: IconButton(icon: const Icon(OMIcons.calendarToday),      
+                      color: Colors.black54,              
+                      iconSize: 30.0,
+                      //padding: EdgeInsets.only(right: 128.0),
+                      tooltip: 'Go to calendar',
+                      onPressed: () {},
+                    ),
                   ),
-                  */
-                  IconButton(icon: const Icon(OMIcons.calendarToday),      
-                    color: Colors.black54,              
-                    iconSize: 30.0,
-                    padding: EdgeInsets.only(right: 55.0),
-                    tooltip: 'Go to calendar',
-                    onPressed: () {},
-                  ),
+                /*
+                Expanded(child:  
+                    Opacity(opacity: 0.0,
+                          child: IconButton(icon: const Icon(OMIcons.face),
+                          color: Colors.black54,
+                          iconSize: 30.0,
+                          //padding: EdgeInsets.only(left: 28.0),
+                          tooltip: 'Go to profile',
+                          onPressed: () {},
+                        )
+                    ,)
+                    
+                ,)
+                */
                 ],
               ),
             )
@@ -197,7 +205,6 @@ class ThirtyDay extends StatelessWidget {
                               //subtitle: Text('Welcome to the 30Day. '),
                               subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),
                             ),
-
                             /*
                             ButtonBar(
                               children: <Widget>[
@@ -238,12 +245,8 @@ class ThirtyDay extends StatelessWidget {
                         isThreeLine: true,
                         ),
                       )
-
-
-
                 ],
               )
-
               /*
               ListWheelScrollView.useDelegate(
                   itemExtent: 100.0,
