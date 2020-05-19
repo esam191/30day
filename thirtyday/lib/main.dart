@@ -98,13 +98,7 @@ class ThirtyDayApp extends StatelessWidget{
   } 
 }
 class ThirtyDay extends StatelessWidget {
-  int _counter = 1;
-  void addNum(){
-    _counter++;
-  }
-  void subNum(){
-    _counter--;
-  }
+
   final PageController _page = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
@@ -180,9 +174,42 @@ class ThirtyDay extends StatelessWidget {
             Container(               
               child: ListView( 
                 children: <Widget>[
-                  Text('Challenges', style: TextStyle(fontSize: 40.0),),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Card(
+                        color: Colors.white60,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                             ListTile(
+                              leading: Icon(Icons.whatshot, color: Colors.deepOrange,),
+                              title: Text('Challenges'),
+                              //subtitle: Text('Welcome to the 30Day. '),
+                              subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),
+                            ),
+
+                            /*
+                            ButtonBar(
+                              children: <Widget>[
+                                FlatButton(
+                                  child: const Text('BUY '),
+                                  onPressed: () {/* ... */},
+                                ),
+                                FlatButton(
+                                  child: const Text('LISTEN'),
+                                  onPressed: () {/* ... */},
+                                ),
+                              ],
+                            ),
+                            */
+                             ),
+                          ],
+                        ),
+                    ),
+                  ),
+                  
                   Card(child: ListTile(
-                        leading: Text('$_counter'),
+                        leading: Text('1'),
                         title: Text('Todo ') ,
                         subtitle: Text('Run 10 miles'),
                         trailing: Icon(Icons.check_box),
