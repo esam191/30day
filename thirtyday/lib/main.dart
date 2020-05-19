@@ -98,26 +98,33 @@ class ThirtyDayApp extends StatelessWidget{
   } 
 }
 class ThirtyDay extends StatelessWidget {
+  int _counter = 1;
+  void addNum(){
+    _counter++;
+  }
+  void subNum(){
+    _counter--;
+  }
   final PageController _page = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
       return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
-          title: Text('30Day'), backgroundColor: Colors.indigo,
+          title: Text('30Day'), backgroundColor: Colors.blueAccent,
           centerTitle: true,
           leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
             print("Clicked");
-          }, color: Colors.black,),
+          }, color: Colors.white,),
           elevation: 10,
           actions: <Widget>[
-            IconButton(icon: const Icon(Icons.settings), color: Colors.black,
+            IconButton(icon: const Icon(Icons.settings), color: Colors.white,
               tooltip: 'Open settings route',
               onPressed: () {},)
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-            color: Colors.indigo,
+            color: Colors.blueAccent,
             shape: CircularNotchedRectangle(),
             child: Container(
               height: 50,
@@ -127,6 +134,7 @@ class ThirtyDay extends StatelessWidget {
                 //children: bottomAppBarButtons,
                 children: <Widget>[
                   IconButton(icon: const Icon(Icons.home),
+                    color: Colors.white ,
                     iconSize: 30.0,
                     padding: EdgeInsets.only(left: 28.0),
                     tooltip: 'Go to home',
@@ -137,18 +145,22 @@ class ThirtyDay extends StatelessWidget {
                     },
                   ),
                   IconButton(icon: const Icon(Icons.share),
+                    color: Colors.white,
                     iconSize: 30.0,
                     padding: EdgeInsets.only(right: 28.0),
                     tooltip: 'Go to share',
                     onPressed: () {},
                   ),
                   IconButton(icon: const Icon(Icons.face),
+                    color: Colors.white,
                     iconSize: 30.0,
                     padding: EdgeInsets.only(left: 28.0),
                     tooltip: 'Go to profile',
                     onPressed: () {},
                   ),
                   IconButton(icon: const Icon(Icons.calendar_today),
+                    color: Colors.white,
+                    
                     iconSize: 30.0,
                     padding: EdgeInsets.only(right: 28.0),
                     tooltip: 'Go to calendar',
@@ -164,45 +176,53 @@ class ThirtyDay extends StatelessWidget {
           onPageChanged: (int) {
             print('Page Changes to index $int');
           },
-          
-          children: <Widget>[
-            Container(
-              child: Align(
-                alignment: Alignment(-.75, -.9),
-                child: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),
-                //Text( 'Challenges', style: TextStyle(color: Colors.black, fontSize: 25),
-                ),
-              ),
-            ),
-            Container(
-              child: Align(
-                alignment: Alignment( -.75,-.9),
-                child: Text( 'Challenges', style: TextStyle(color: Colors.black, fontSize: 25)),
-              ),
-            )
-            /*
-            Center(
-              child: Container(
-                child: Text('Empty Body 0'),
-              ),
-            ),
+          children: <Widget>[    // main container
+            Container(               
+              child: ListView( 
+                children: <Widget>[
+                  Text('Challenges', style: TextStyle(fontSize: 40.0),),
+                  Card(child: ListTile(
+                        leading: Text('$_counter'),
+                        title: Text('Todo ') ,
+                        subtitle: Text('Run 10 miles'),
+                        trailing: Icon(Icons.check_box),
+                        isThreeLine: true,
+                        ),
+                      ),
+                      Card(child: ListTile(
+                        leading: Text('2'),
+                        title: Text('challenge') ,
+                        subtitle: Text('Sleep 8 hours'),
+                        trailing: Icon(Icons.check_box),
+                        isThreeLine: true,
+                        ),
+                      )
 
-            Center(
-              child: Container(
-                child: Text('Empty Body 1'),
-              ),
-            ),
-            Center(
-              child: Container(
-                child: Text('Empty Body 2'),
-              ),
-            ),
-            Center(
-              child: Container(
-                child: Text('Empty Body 3'),
-              ),
-            )
-            */
+
+
+                ],
+              )
+
+              /*
+              ListWheelScrollView.useDelegate(
+                  itemExtent: 100.0,
+                  clipToSize: true,
+                
+                  childDelegate:ListWheelChildLoopingListDelegate(children: const <Widget> [
+                  Card(child: ListTile(
+                        leading: FlutterLogo(size: 72.0),
+                        title: Text('Three-line ListTile'),
+                        subtitle: Text('A sufficiently long subtitle warrants three lines.'),
+                        trailing: Icon(Icons.more_vert),
+                        isThreeLine: true,
+                        ),
+                      )
+                  ])
+                 ,)
+
+
+                 */
+              ,)
           ],
         ),
         floatingActionButton: Container(
@@ -210,13 +230,13 @@ class ThirtyDay extends StatelessWidget {
             width: 65.0,
             child: FittedBox(
               child: FloatingActionButton(
-
+                  
                   tooltip: 'Add a new challenge',
-                  backgroundColor: Colors.indigo,
+                  backgroundColor: Colors.blueAccent,
                   onPressed: () {
                     /// TODO: add code to enter challenge
                   },
-                  child: Icon(Icons.add, color: Colors.black,)
+                  child: Icon(Icons.add, color: Colors.white,)
 
               )
               ,)
