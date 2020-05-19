@@ -136,8 +136,9 @@ class ThirtyDay extends StatelessWidget {
                 //children: bottomAppBarButtons,
                 children: <Widget>[
                   IconButton(icon: const Icon(OMIcons.home),
+                    color: Colors.black54,
                     iconSize: 30.0,
-                    padding: EdgeInsets.only(left: 28.0),
+                    padding: EdgeInsets.only(left: 50.0),
                     tooltip: 'Go to home',
                     onPressed: () {
                       /// Go back to login page.
@@ -145,21 +146,27 @@ class ThirtyDay extends StatelessWidget {
                       Navigator.pop(context); // MOVE this to settings--logout
                     },
                   ),
+                  /*
                   IconButton(icon: const Icon(OMIcons.share),
+                    color: Colors.black54,
                     iconSize: 30.0,
                     padding: EdgeInsets.only(right: 28.0),
                     tooltip: 'Go to share',
                     onPressed: () {},
                   ),
+                  
                   IconButton(icon: const Icon(OMIcons.face),
+                    color: Colors.black54,
                     iconSize: 30.0,
                     padding: EdgeInsets.only(left: 28.0),
                     tooltip: 'Go to profile',
                     onPressed: () {},
                   ),
-                  IconButton(icon: const Icon(OMIcons.calendarToday),                    
+                  */
+                  IconButton(icon: const Icon(OMIcons.calendarToday),      
+                    color: Colors.black54,              
                     iconSize: 30.0,
-                    padding: EdgeInsets.only(right: 28.0),
+                    padding: EdgeInsets.only(right: 55.0),
                     tooltip: 'Go to calendar',
                     onPressed: () {},
                   ),
