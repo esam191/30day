@@ -107,7 +107,7 @@ class ThirtyDay extends StatelessWidget {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
           title: Text('30Day', style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.black54,
+          backgroundColor: Colors.black87,
           centerTitle: true,
           /*
           leading: IconButton(icon: Icon(OMIcons.menu, color: Colors.black),
