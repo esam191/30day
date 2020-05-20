@@ -182,8 +182,8 @@ class ThirtyDay extends StatelessWidget {
                 ],
               ),
             )
-
         ),
+        backgroundColor: Colors.white,
         body: PageView(
           controller: _page,
           onPageChanged: (int) {
@@ -193,19 +193,21 @@ class ThirtyDay extends StatelessWidget {
             Container(               
               child: ListView( 
                 children: <Widget>[
+                  Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 5),),
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(15.0),
+                      borderRadius: BorderRadius.circular(30.0),
                       child: Card(
-                        color: Colors.white60,
+                        elevation: 40,
+                        color: Color(0xFFB3E5FC),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                              ListTile(
                               leading: Icon(OMIcons.whatshot, color: Colors.deepOrange,),
-                              title: Text('Challenges'),
-                              //subtitle: Text('Welcome to the 30Day. '),
-                              subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),
-                            ),
+                              title: Text('Newbie', style: TextStyle(fontSize: 20, fontWeight:FontWeight.w700 ),),
+                              subtitle: Text('20,365', style: TextStyle(fontSize: 15, fontWeight:FontWeight.w700 ),),
+                             // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
+                               trailing: Icon(OMIcons.accessibilityNew, size: 40,),
                             /*
                             ButtonBar(
                               children: <Widget>[
@@ -221,31 +223,53 @@ class ThirtyDay extends StatelessWidget {
                             ),
                             */
                              ),
+                            Padding(padding: EdgeInsets.all(30)),
                           ],
                         ),
                     ),
                   ),
-                  
+                  Padding(padding: EdgeInsets.fromLTRB(20, 20, 0, 5),
+                  child: Text('Challenges', style: TextStyle(fontSize: 20, fontWeight:FontWeight.w700 ),),
+                  ),
                   Card(
-                    color: Colors.white70,
+                    semanticContainer: true,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    color: Color(0xFFE1F5FE),
+                    elevation: 10,
+                    //shadowColor: ,
                     child: ListTile(
                         leading: Text('1'),
-                        title: Text('Todo ') ,
-                        subtitle: Text('Run 10 miles'),
+                        title: Text('Run 10 miles') ,
+                        subtitle: Text('22/30 days completed.'),
                         trailing: Icon(OMIcons.checkBox),
-                        isThreeLine: true,
+                      onTap: () {},
                         ),
+                   margin:  EdgeInsets.all(5),
                       ),
                   Card(
-                    color: Colors.white70,
-                      child: ListTile(
-                        leading: Text('2'),
-                        title: Text('challenge') ,
-                        subtitle: Text('Sleep 8 hours'),
-                        trailing: Icon(OMIcons.checkBox),
-                        isThreeLine: true,
-                        ),
-                      )
+                    color: Color(0xFFE1F5FE),
+                    elevation: 10,
+                    child: ListTile(
+                      leading: Text('2'),
+                      title: Text('Sleep 8 hours') ,
+                      subtitle: Text('12/30 days completed.'),
+                      trailing: Icon(OMIcons.checkBox),
+                      onTap: () {},
+                    ),
+                   margin:  EdgeInsets.all(5),
+                  ),
+                  Card(
+                    color: Color(0xFFE1F5FE),
+                    elevation: 10,
+                    child: ListTile(
+                      leading: Text('3'),
+                      title: Text('Pushups') ,
+                      subtitle: Text('4/30 days completed.'),
+                      trailing: Icon(OMIcons.checkBox),
+                      onTap: () {},
+                    ),
+                    margin: EdgeInsets.all(5) ,
+                  )
                 ],
               )
               /*
