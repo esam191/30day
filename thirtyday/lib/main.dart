@@ -203,11 +203,11 @@ class ThirtyDay extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                              ListTile(
-                              leading: Icon(OMIcons.whatshot, color: Colors.deepOrange,),
+                              leading: Icon(OMIcons.whatshot, color: Colors.deepOrange, size: 30,),
                               title: Text('Newbie', style: TextStyle(fontSize: 20, fontWeight:FontWeight.w700 ),),
-                              subtitle: Text('20,365', style: TextStyle(fontSize: 15, fontWeight:FontWeight.w700 ),),
+                              subtitle: Text('20,365', style: TextStyle(fontSize: 16, fontWeight:FontWeight.w700 ),),
                              // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
-                               trailing: Icon(OMIcons.accessibilityNew, size: 40,),
+                               trailing: Icon(OMIcons.barChart, size: 50), onTap: (){},
                             /*
                             ButtonBar(
                               children: <Widget>[

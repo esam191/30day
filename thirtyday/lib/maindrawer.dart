@@ -53,7 +53,7 @@ class MainDrawer extends StatelessWidget {
             onTap: null,
           ),
           ListTile(
-            leading: Icon(OMIcons.toys),
+            leading: Icon(OMIcons.stars),
             title: Text(
               'Badges',
               style: TextStyle( fontSize: 18,),
