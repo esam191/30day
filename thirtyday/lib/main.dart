@@ -232,11 +232,11 @@ class ThirtyDay extends StatelessWidget {
                   Padding(padding: EdgeInsets.fromLTRB(20, 20, 0, 5),
                   child: Text('Challenges', style: TextStyle(fontSize: 20, fontWeight:FontWeight.w700 ),),
                   ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(40.0), child:
                   Card(
-                    semanticContainer: true,
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
                     color: Color(0xFFF5F5F5),
-                    elevation: 10,
+                    elevation: 5,
                     //shadowColor: ,
                     child: ListTile(
                         leading: Text('1'),
@@ -247,9 +247,12 @@ class ThirtyDay extends StatelessWidget {
                         ),
                    margin:  EdgeInsets.all(5),
                       ),
+                  ),
+                   ClipRRect(
+                     borderRadius: BorderRadius.circular(40.0), child:
                   Card(
                     color: Color(0xFFF5F5F5),
-                    elevation: 10,
+                    elevation: 5,
                     child: ListTile(
                       leading: Text('2'),
                       title: Text('Sleep 8 hours') ,
@@ -258,10 +261,12 @@ class ThirtyDay extends StatelessWidget {
                       onTap: () {},
                     ),
                    margin:  EdgeInsets.all(5),
-                  ),
+                  ),),
+                   ClipRRect(
+                   borderRadius: BorderRadius.circular(40.0), child:
                   Card(
+                    elevation: 5,
                     color: Color(0xFFF5F5F5),
-                    elevation: 10,
                     child: ListTile(
                       leading: Text('3'),
                       title: Text('Pushups') ,
@@ -270,7 +275,8 @@ class ThirtyDay extends StatelessWidget {
                       onTap: () {},
                     ),
                     margin: EdgeInsets.all(5) ,
-                  )
+                  )),
+
                 ],
               )
               /*
