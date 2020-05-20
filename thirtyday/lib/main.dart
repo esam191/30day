@@ -183,7 +183,7 @@ class ThirtyDay extends StatelessWidget {
               ),
             )
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFFEEEEEE),
         body: PageView(
           controller: _page,
           onPageChanged: (int) {
@@ -198,14 +198,15 @@ class ThirtyDay extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30.0),
                       child: Card(
                         elevation: 40,
-                        color: Color(0xFFB3E5FC),
+                        color: Color(0xFF1E88E5),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
+                            Padding(padding: EdgeInsets.all(5)),
                              ListTile(
                               leading: Icon(OMIcons.whatshot, color: Colors.deepOrange, size: 30,),
-                              title: Text('Newbie', style: TextStyle(fontSize: 20, fontWeight:FontWeight.w700 ),),
-                              subtitle: Text('20,365', style: TextStyle(fontSize: 16, fontWeight:FontWeight.w700 ),),
+                              title: Text('Newbie', style: TextStyle(fontSize: 22, color: Colors.white),),
+                              subtitle: Text('20,365', style: TextStyle(fontSize: 16, color: Colors.white, ),),
                              // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
                                trailing: Icon(OMIcons.barChart, size: 50), onTap: (){},
                             /*
@@ -234,7 +235,7 @@ class ThirtyDay extends StatelessWidget {
                   Card(
                     semanticContainer: true,
                     clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: Color(0xFFE1F5FE),
+                    color: Color(0xFFF5F5F5),
                     elevation: 10,
                     //shadowColor: ,
                     child: ListTile(
@@ -247,7 +248,7 @@ class ThirtyDay extends StatelessWidget {
                    margin:  EdgeInsets.all(5),
                       ),
                   Card(
-                    color: Color(0xFFE1F5FE),
+                    color: Color(0xFFF5F5F5),
                     elevation: 10,
                     child: ListTile(
                       leading: Text('2'),
@@ -259,7 +260,7 @@ class ThirtyDay extends StatelessWidget {
                    margin:  EdgeInsets.all(5),
                   ),
                   Card(
-                    color: Color(0xFFE1F5FE),
+                    color: Color(0xFFF5F5F5),
                     elevation: 10,
                     child: ListTile(
                       leading: Text('3'),
