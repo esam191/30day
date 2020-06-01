@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:thirtyday/maindrawer.dart';
+import 'package:thirtyday/fabfunction.dart';
 
 void main(){
   runApp(MaterialApp(
@@ -183,22 +184,23 @@ class ThirtyDay extends StatelessWidget {
               ),
             )
         ),
-        backgroundColor: Color(0xFFEEEEEE),
+        backgroundColor: Colors.white,//Color(0xFFEEEEEE),
         body: PageView(
           controller: _page,
           onPageChanged: (int) {
             print('Page Changes to index $int');
           },
           children: <Widget>[    // main container
-            Container(               
+            Container(         
+              color: Colors.grey[50],      
               child: ListView( 
                 children: <Widget>[
                   Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 5),),
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(30.0),
+                      borderRadius: BorderRadius.circular(20.0),
                       child: Card(
-                        elevation: 40,
-                        color: Color(0xFF1E88E5),
+                        //elevation: 40,
+                        color: Color(0xFF42A5F5),//Colors.blueAccent,
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
@@ -230,13 +232,13 @@ class ThirtyDay extends StatelessWidget {
                     ),
                   ),
                   Padding(padding: EdgeInsets.fromLTRB(20, 20, 0, 5),
-                  child: Text('Challenges', style: TextStyle(fontSize: 20, fontWeight:FontWeight.w700 ),),
+                  child: Text('Challenges', style: TextStyle(fontSize: 15, fontFamily: 'Proxima Sans'),),
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(40.0), child:
+                  //ClipRRect(
+                    //borderRadius: BorderRadius.circular(40.0), child:
                   Card(
-                    color: Color(0xFFF5F5F5),
-                    elevation: 5,
+                    //color: Color(0xFFF5F5F5),
+                    elevation: 1,
                     //shadowColor: ,
                     child: ListTile(
                         leading: Text('1'),
@@ -247,12 +249,12 @@ class ThirtyDay extends StatelessWidget {
                         ),
                    margin:  EdgeInsets.all(5),
                       ),
-                  ),
-                   ClipRRect(
-                     borderRadius: BorderRadius.circular(40.0), child:
+                  //),
+                   //ClipRRect(
+                     //borderRadius: BorderRadius.circular(40.0), child:
                   Card(
-                    color: Color(0xFFF5F5F5),
-                    elevation: 5,
+                    //color: Color(0xFFF5F5F5),
+                    elevation: 1,
                     child: ListTile(
                       leading: Text('2'),
                       title: Text('Sleep 8 hours') ,
@@ -261,12 +263,13 @@ class ThirtyDay extends StatelessWidget {
                       onTap: () {},
                     ),
                    margin:  EdgeInsets.all(5),
-                  ),),
-                   ClipRRect(
-                   borderRadius: BorderRadius.circular(40.0), child:
+                  ),
+                  //,),
+                   //ClipRRect(
+                  // borderRadius: BorderRadius.circular(40.0), child:
                   Card(
-                    elevation: 5,
-                    color: Color(0xFFF5F5F5),
+                    elevation: 1,
+                    //color: Color(0xFFF5F5F5),
                     child: ListTile(
                       leading: Text('3'),
                       title: Text('Pushups') ,
@@ -274,8 +277,10 @@ class ThirtyDay extends StatelessWidget {
                       trailing: Icon(OMIcons.checkBox),
                       onTap: () {},
                     ),
-                    margin: EdgeInsets.all(5) ,
-                  )),
+                    margin: EdgeInsets.all(5),
+
+                  ),
+                  //),
 
                 ],
               )
@@ -306,11 +311,11 @@ class ThirtyDay extends StatelessWidget {
               child: FloatingActionButton(
                   
                   tooltip: 'Add a new challenge',
-                  backgroundColor: Colors.white,
+                  //backgroundColor: Colors.blueAccent[50],
                   onPressed: () {
                     /// TODO: add code to enter challenge
                   },
-                  child: Icon(OMIcons.add, color: Colors.black,)
+                  child: Icon(OMIcons.add, color: Colors.black54,)
 
               )
               ,)
