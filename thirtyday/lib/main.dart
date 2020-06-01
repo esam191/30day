@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:intl/intl.dart';
+//import 'package:intl/intl.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
-import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+//import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:thirtyday/maindrawer.dart';
-import 'package:thirtyday/fabfunction.dart';
+import 'package:thirtyday/settings.dart';
 
 void main(){
   runApp(MaterialApp(
-    home: ThirtyDayApp(),
+    home: AppIntro(),
     routes: <String, WidgetBuilder> {
       "/SecondPage": (BuildContext context) => ThirtyDay(),
-      "/IntroPage": (BuildContext context) => ThirtyDayApp(),
+      "/IntroPage": (BuildContext context) => AppIntro(),
+      "/SettingsPage": (BuildContext context) => AppSettings(),
     }
   ));
 }
-class ThirtyDayApp extends StatelessWidget{
+class AppIntro extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
      return Scaffold(
