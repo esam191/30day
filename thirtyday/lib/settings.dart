@@ -44,26 +44,29 @@ class AppSettings extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
-            Text('Notification Settings', style: TextStyle(
-              fontSize: 20.0, fontWeight: FontWeight.bold,
-              color: Colors.black54,
-            ),),
+            Text('Notification Settings',  style: TextStyle( fontSize: 20.0,
+              fontWeight: FontWeight.bold, color: Colors.black54,),
+            ),
             SwitchListTile(
+              contentPadding: const EdgeInsets.all(0),
               value: true,
               title: Text("Task Reminders"),
               onChanged: (val){},
             ),
             SwitchListTile(
+              contentPadding: const EdgeInsets.all(0),
               value: true,
               title: Text("Sounds"),
               onChanged: (val){},
             ),
             SwitchListTile(
+              contentPadding: const EdgeInsets.all(0),
               value: false,
               title: Text("Newsletters"),
               onChanged: null,
             ),
             SwitchListTile(
+              contentPadding: const EdgeInsets.all(0),
               value: true,
               title: Text("App Updates"),
               onChanged: (val){},

@@ -5,6 +5,7 @@ import 'package:outline_material_icons/outline_material_icons.dart';
 //import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:thirtyday/maindrawer.dart';
 import 'package:thirtyday/settings.dart';
+import 'package:thirtyday/signup.dart';
 
 void main(){
   runApp(MaterialApp(
@@ -13,6 +14,7 @@ void main(){
       "/SecondPage": (BuildContext context) => ThirtyDay(),
       "/IntroPage": (BuildContext context) => AppIntro(),
       "/SettingsPage": (BuildContext context) => AppSettings(),
+      "/SignupPage": (BuildContext context) => SignUp(),
     }
   ));
 }
@@ -44,7 +46,7 @@ class AppIntro extends StatelessWidget{
                 ),
             ),
               PageViewModel(
-                title: "Start tracking.",
+                title: "List challenges.",
                 body: "Use the '+' sign to add a new challenge once logged in.",
                 image: Center(child: Image.asset("images/img2.png", height: 250.0)),
                 decoration: const PageDecoration(
@@ -75,7 +77,7 @@ class AppIntro extends StatelessWidget{
                           child: GestureDetector(
                             onTap: () { Navigator.of(context).pushNamed("/SecondPage");},
                             child: Center(
-                              child: Text('SIGN UP'),
+                              child: Text('LOG IN'),
                             ) ,
                           ),
                         )
@@ -92,11 +94,11 @@ class AppIntro extends StatelessWidget{
                 ) */
               ), 
           ],
-          onDone: (){ Navigator.of(context).pushNamed("/SecondPage"); },
+          onDone: (){ Navigator.of(context).pushNamed("/SignupPage"); },
           showSkipButton: true,
           skip: const Text('SKIP'),
           next: const Icon(Icons.navigate_next),
-          done: const Text("LOG IN", style: TextStyle(fontWeight: FontWeight.w600)),
+          done: const Text("SIGN UP", style: TextStyle(fontWeight: FontWeight.w600)),
         ),
       )
     );
