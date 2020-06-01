@@ -66,7 +66,7 @@ class MainDrawer extends StatelessWidget {
               'Settings',
               style: TextStyle( fontSize: 18,),
             ),
-            onTap: null,
+            onTap: () { Navigator.of(context).pushNamed("/SettingsPage");},
           ),
           ListTile(
             leading: Icon(OMIcons.arrowBack),
