@@ -4,10 +4,10 @@ class SignUp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.greenAccent,
-        body: Padding(
-          padding: EdgeInsets.fromLTRB(40, 200, 40, 200),
+        backgroundColor: Colors.green[200],
+        body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text("Start tracking.", style: TextStyle(fontWeight: FontWeight.w900, fontSize: 40.0, color: Colors.white),),
