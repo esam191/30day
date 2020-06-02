@@ -6,7 +6,7 @@ import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:thirtyday/maindrawer.dart';
 import 'package:thirtyday/settings.dart';
 import 'package:thirtyday/signup.dart';
-
+import 'package:thirtyday/statefulChallenge.dart';
 void main(){
   runApp(MaterialApp(
     home: AppIntro(),
@@ -85,7 +85,6 @@ class AppIntro extends StatelessWidget{
                     ],
                   ),
                 )
-
                 /* GoogleSignInButton(
                   onPressed: () { },
                   splashColor: Colors.white,
@@ -108,203 +107,100 @@ class ThirtyDay extends StatelessWidget {
   final PageController _page = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        appBar: AppBar(
-          title: Text('30Day', style: TextStyle(color: Colors.black)),
-          backgroundColor: Colors.white,
-          centerTitle: true,
-          iconTheme: IconThemeData(color: Colors.black),
-          /*
-          leading: IconButton(icon: Icon(OMIcons.menu, color: Colors.black),
-          onPressed: () {
-            //print("Clicked");
-          },),
-          elevation: 10,
-          actions: <Widget>[
-            IconButton(icon: Icon(OMIcons.settings, color: Colors.black,),
-              tooltip: 'Open settings route',
-              onPressed: () {},)
-          ],
-          */
-        ),
-        drawer: MainDrawer(),
-        
-        bottomNavigationBar: BottomAppBar(
-            color: Colors.white,
-            shape: CircularNotchedRectangle(),
-            child: Container(
-              height: 50,
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //children: bottomAppBarButtons,
-                children: <Widget>[
-                  Expanded(
-                      child: IconButton(icon: const Icon(OMIcons.home),
-                      color: Colors.black54,
-                      iconSize: 30.0,
-                      //padding: EdgeInsets.only(left: 28.0),
-                      tooltip: 'Go to home',
-                      onPressed: () {
-                        /// Go back to login page.
-                        /// TODO: put this pop inside settings 
-                        Navigator.pop(context); // MOVE this to settings--logout
-                      },
-                    ),
-                  ),
-                  Expanded(child: IconButton(icon: const Icon(OMIcons.share),
-                      color: Colors.black54,
-                      iconSize: 30.0,
-                      //padding: EdgeInsets.only(right: 28.0),
-                      tooltip: 'Go to share',
-                      onPressed: () {},
-                    ),
-                  ),
-                  Expanded(child: IconButton(icon: const Icon(OMIcons.calendarToday),      
-                      color: Colors.black54,              
-                      iconSize: 30.0,
-                      //padding: EdgeInsets.only(right: 128.0),
-                      tooltip: 'Go to calendar',
-                      onPressed: () {},
-                    ),
-                  ),
-                /*
-                Expanded(child:  
-                    Opacity(opacity: 0.0,
-                          child: IconButton(icon: const Icon(OMIcons.face),
-                          color: Colors.black54,
-                          iconSize: 30.0,
-                          //padding: EdgeInsets.only(left: 28.0),
-                          tooltip: 'Go to profile',
-                          onPressed: () {},
-                        )
-                    ,)
-                    
-                ,)
-                */
-                ],
+      Challenge stateChallenge;
+            return Scaffold(
+              floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+              appBar: AppBar(
+                title: Text('30Day', style: TextStyle(color: Colors.black)),
+                backgroundColor: Colors.white,
+                centerTitle: true,
+                iconTheme: IconThemeData(color: Colors.black),
               ),
-            )
-        ),
-        backgroundColor: Colors.white,//Color(0xFFEEEEEE),
-        body: PageView(
-          controller: _page,
-          onPageChanged: (int) {
-            print('Page Changes to index $int');
-          },
-          children: <Widget>[    // main container
-            Container(         
-              color: Colors.grey[50],      
-              child: ListView( 
-                children: <Widget>[
-                  Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 5),),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20.0),
-                      child: Card(
-                        //elevation: 40,
-                        color: Color(0xFF42A5F5),//Colors.blueAccent,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Padding(padding: EdgeInsets.all(5)),
-                             ListTile(
-                              leading: Icon(OMIcons.whatshot, color: Colors.deepOrange, size: 30,),
-                              title: Text('Newbie', style: TextStyle(fontSize: 22, color: Colors.white),),
-                              subtitle: Text('20,365', style: TextStyle(fontSize: 16, color: Colors.white, ),),
-                             // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
-                               trailing: Icon(OMIcons.barChart, size: 50), onTap: (){},
-                            /*
-                            ButtonBar(
-                              children: <Widget>[
-                                FlatButton(
-                                  child: const Text('BUY '),
-                                  onPressed: () {/* ... */},
-                                ),
-                                FlatButton(
-                                  child: const Text('LISTEN'),
-                                  onPressed: () {/* ... */},
-                                ),
-                              ],
-                            ),
-                            */
-                             ),
-                            Padding(padding: EdgeInsets.all(30)),
-                          ],
+              drawer: MainDrawer(),
+              
+              bottomNavigationBar: BottomAppBar(
+                  color: Colors.white,
+                  shape: CircularNotchedRectangle(),
+                  child: Container(
+                    height: 50,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //children: bottomAppBarButtons,
+                      children: <Widget>[
+                        Expanded(
+                            child: IconButton(icon: const Icon(OMIcons.home),
+                            color: Colors.black54,
+                            iconSize: 30.0,
+                            //padding: EdgeInsets.only(left: 28.0),
+                            tooltip: 'Go to home',
+                            onPressed: () {
+                              /// Go back to login page.
+                              /// TODO: put this pop inside settings 
+                              Navigator.pop(context); // MOVE this to settings--logout
+                            },
+                          ),
                         ),
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.fromLTRB(20, 20, 0, 5),
-                  child: Text('Challenges', style: TextStyle(fontSize: 15, fontFamily: 'Proxima Sans'),),
-                  ),
-                  //ClipRRect(
-                    //borderRadius: BorderRadius.circular(40.0), child:
-                  Card(
-                    //color: Color(0xFFF5F5F5),
-                    elevation: 1,
-                    //shadowColor: ,
-                    child: ListTile(
-                        leading: Text('1'),
-                        title: Text('Run 10 miles') ,
-                        subtitle: Text('22/30 days completed.'),
-                        trailing: Icon(OMIcons.checkBox),
-                      onTap: () {},
+                        Expanded(child: IconButton(icon: const Icon(OMIcons.share),
+                            color: Colors.black54,
+                            iconSize: 30.0,
+                            //padding: EdgeInsets.only(right: 28.0),
+                            tooltip: 'Go to share',
+                            onPressed: () {},
+                          ),
                         ),
-                   margin:  EdgeInsets.all(5),
-                      ),
-                  //),
-                   //ClipRRect(
-                     //borderRadius: BorderRadius.circular(40.0), child:
-                  Card(
-                    //color: Color(0xFFF5F5F5),
-                    elevation: 1,
-                    child: ListTile(
-                      leading: Text('2'),
-                      title: Text('Sleep 8 hours') ,
-                      subtitle: Text('12/30 days completed.'),
-                      trailing: Icon(OMIcons.checkBox),
-                      onTap: () {},
+                        Expanded(child: IconButton(icon: const Icon(OMIcons.calendarToday),      
+                            color: Colors.black54,              
+                            iconSize: 30.0,
+                            //padding: EdgeInsets.only(right: 128.0),
+                            tooltip: 'Go to calendar',
+                            onPressed: () {},
+                          ),
+                        ),
+                      ],
                     ),
-                   margin:  EdgeInsets.all(5),
-                  ),
-                  //,),
-                   //ClipRRect(
-                  // borderRadius: BorderRadius.circular(40.0), child:
-                  Card(
-                    elevation: 1,
-                    //color: Color(0xFFF5F5F5),
-                    child: ListTile(
-                      leading: Text('3'),
-                      title: Text('Pushups') ,
-                      subtitle: Text('4/30 days completed.'),
-                      trailing: Icon(OMIcons.checkBox),
-                      onTap: () {},
-                    ),
-                    margin: EdgeInsets.all(5),
-
-                  ),
-                  //),
-
+                  )
+              ),
+              backgroundColor: Colors.white,//Color(0xFFEEEEEE),
+              body: PageView(
+                controller: _page,
+                onPageChanged: (int) {
+                  print('Page Changes to index $int');
+                },
+                children: <Widget>[    // main container
+                  Container(         
+                    color: Colors.grey[50],      
+                    child: ListView( 
+                      children: <Widget>[
+                        Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 5),),
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Card(
+                              //elevation: 40,
+                              color: Color(0xFF42A5F5),//Colors.blueAccent,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  Padding(padding: EdgeInsets.all(5)),
+                                   ListTile(
+                                    leading: Icon(OMIcons.whatshot, color: Colors.deepOrange, size: 30,),
+                                    title: Text('Newbie', style: TextStyle(fontSize: 22, color: Colors.white),),
+                                    subtitle: Text('20,365', style: TextStyle(fontSize: 16, color: Colors.white, ),),
+                                   // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
+                                     trailing: Icon(OMIcons.barChart, size: 50), onTap: (){},
+                                   ),
+                                  Padding(padding: EdgeInsets.all(30)),
+                                ],
+                              ),
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.fromLTRB(20, 20, 0, 5),
+                                child: Text('Challenges', style: TextStyle(fontSize: 15, fontFamily: 'Proxima Sans'),),
+                                ),
+                        stateChallenge = Challenge(),
                 ],
               )
-              /*
-              ListWheelScrollView.useDelegate(
-                  itemExtent: 100.0,
-                  clipToSize: true,
-                
-                  childDelegate:ListWheelChildLoopingListDelegate(children: const <Widget> [
-                  Card(child: ListTile(
-                        leading: FlutterLogo(size: 72.0),
-                        title: Text('Three-line ListTile'),
-                        subtitle: Text('A sufficiently long subtitle warrants three lines.'),
-                        trailing: Icon(Icons.more_vert),
-                        isThreeLine: true,
-                        ),
-                      )
-                  ])
-                 ,)
-                 */
-              ,)
+              ,),
           ],
         ),
         floatingActionButton: Container(
@@ -312,19 +208,14 @@ class ThirtyDay extends StatelessWidget {
             width: 65.0,
             child: FittedBox(
               child: FloatingActionButton(
-                  
                   tooltip: 'Add a new challenge',
                   //backgroundColor: Colors.blueAccent[50],
-                  onPressed: () {
-                    /// TODO: add code to enter challenge
+                  onPressed: () {  
                   },
                   child: Icon(OMIcons.add, color: Colors.black54,)
-
               )
               ,)
         ),
       );
   }
 }
-
-
