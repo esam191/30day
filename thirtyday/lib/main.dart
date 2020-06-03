@@ -5,7 +5,8 @@ import 'package:outline_material_icons/outline_material_icons.dart';
 //import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'package:thirtyday/settings.dart';
 import 'package:thirtyday/signup.dart';
-import 'package:thirtyday/statefulChallenge.dart';
+import 'package:thirtyday/homepage.dart';
+
 void main() {
   runApp(MaterialApp(
     home: AppIntro(),
