@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
+    @override
+    Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.blueAccent,
         body: SafeArea(
