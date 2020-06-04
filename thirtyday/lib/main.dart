@@ -5,7 +5,6 @@ import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:thirtyday/settings.dart';
 import 'package:thirtyday/signup.dart';
-import 'package:thirtyday/homepage.dart';
 import 'package:thirtyday/calendar.dart';
 import 'package:thirtyday/todo_list.dart';
 
