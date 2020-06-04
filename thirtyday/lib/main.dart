@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-//import 'package:intl/intl.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 //import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+import 'package:table_calendar/table_calendar.dart';
 import 'package:thirtyday/settings.dart';
 import 'package:thirtyday/signup.dart';
 import 'package:thirtyday/homepage.dart';
+import 'package:thirtyday/calendar.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -15,6 +16,7 @@ void main() {
       "/IntroPage": (BuildContext context) => AppIntro(),
       "/SettingsPage": (BuildContext context) => AppSettings(),
       "/SignupPage": (BuildContext context) => SignUp(),
+      "/CalendarPage": (BuildContext context) => Calendar(),
     }
   ));
 }

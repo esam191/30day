@@ -32,6 +32,7 @@ dependencies:
   intl: ^0.15.8
   sqflite: any
   path_provider: any
+  table_calendar: ^2.2.3
   google_fonts: ^1.1.0
   outline_material_icons: ^0.1.1
   flutter_auth_buttons:

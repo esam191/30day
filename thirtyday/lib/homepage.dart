@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thirtyday/drawer.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
+import 'package:table_calendar/table_calendar.dart';
 //import 'package:flutter/src/rendering/box.dart';
 class Challenge extends StatefulWidget{
   @override
@@ -10,6 +11,7 @@ class ChallengeState extends State<Challenge> {
   final PageController _page = PageController(initialPage: 0);
   final _challenges = <Card>[];
   int _counter  = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +41,9 @@ class ChallengeState extends State<Challenge> {
                             tooltip: 'Go to home',
                             onPressed: () {
                               /// Go back to login page.
-                              /// TODO: put this pop inside settings 
-                              Navigator.pop(context); // MOVE this to settings--logout
+                              /// TODO: put this pop inside settings
+                              Navigator.of(context).pushNamed("/SecondPage");
+                              //Navigator.pop(context); // MOVE this to settings--logout
                             },
                           ),
                         ),
@@ -57,7 +60,8 @@ class ChallengeState extends State<Challenge> {
                             iconSize: 30.0,
                             //padding: EdgeInsets.only(right: 128.0),
                             tooltip: 'Go to calendar',
-                            onPressed: () {},
+                            onPressed: () { Navigator.of(context).pushNamed("/CalendarPage");
+                            },
                           ),
                         ),
                       ],
