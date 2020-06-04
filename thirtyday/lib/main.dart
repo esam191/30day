@@ -7,6 +7,7 @@ import 'package:thirtyday/settings.dart';
 import 'package:thirtyday/signup.dart';
 import 'package:thirtyday/homepage.dart';
 import 'package:thirtyday/calendar.dart';
+import 'package:thirtyday/todo_list.dart';
 
 void main() {
   runApp(MaterialApp(
