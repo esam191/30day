@@ -6,6 +6,7 @@ import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:thirtyday/settings.dart';
 import 'package:thirtyday/signup.dart';
 import 'package:thirtyday/homepage.dart';
+import 'package:thirtyday/todo_list.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -107,6 +108,6 @@ class ThirtyDay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       //Challenge stateChallenge;
-            return Challenge();
+            return TodoList();
   }
 }

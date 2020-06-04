@@ -23,7 +23,7 @@ class MainDrawer extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                        image: NetworkImage('https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png'), fit: BoxFit.fill),
+                        image: NetworkImage('https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png'), fit: BoxFit.fill), // save image locally TODO
                       )
                     ),
               Text(
