@@ -20,7 +20,9 @@ class NoteList extends StatefulWidget {
 }
 
 class NoteListState extends State<NoteList> {
-
+  static final PageController _page = PageController(
+    initialPage: 0,
+  );
   DatabaseHelper databaseHelper = DatabaseHelper();
   List<Note> noteList;
   int count = 0;
@@ -32,7 +34,6 @@ class NoteListState extends State<NoteList> {
       noteList = List<Note>();
       updateListView();
     }
-
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       appBar: AppBar(
@@ -43,10 +44,10 @@ class NoteListState extends State<NoteList> {
       ),
       drawer: MainDrawer(),
       body: PageView(
-        /*controller: _page,
-        //onPageChanged: (int) {
-        // print('Page Changes to index $int');
-         }, */
+        controller: _page,
+        onPageChanged: (int) {
+         print('Page Changes to index $int');  
+        },
         children: <Widget>[    // main container
           Container(
             color: Colors.grey[50],
@@ -127,7 +128,10 @@ class NoteListState extends State<NoteList> {
                           title: Text('Challenges', style: TextStyle(fontSize: 22, color: Colors.black),),
                           //subtitle: Text('swipe right', style: TextStyle(fontSize: 16, color: Colors.black, ),),
                           // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
-                          trailing: Icon(Icons.keyboard_arrow_right, size: 50), onTap: (){},
+                          trailing: Icon(Icons.keyboard_arrow_right, size: 50), onTap: (){
+                              //_page.animateToPage(1, curve: null, duration: null);
+                                _page.jumpToPage(1);
+                          },
                         ),
                         Padding(padding: EdgeInsets.all(3)),
                       ],
@@ -147,10 +151,21 @@ class NoteListState extends State<NoteList> {
             )
             ,),
           //getNoteListView(),
-          Container(
-            child: getNoteListView(),
-            color: Colors.grey[50],
-          ),
+          Scaffold(
+            body:Container(
+                    child: getNoteListView(),
+                    color: Colors.grey[50],
+                  ),
+            floatingActionButton:FloatingActionButton(
+                     onPressed: () {
+                      debugPrint('FAB clicked');
+                      navigateToDetail(Note('', '', 2), 'Add Note');
+                    },
+                    tooltip: 'Add Note',
+                    child: Icon(Icons.add),
+                ),   
+          )
+          
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -203,17 +218,7 @@ class NoteListState extends State<NoteList> {
 
       //getNoteListView(),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          debugPrint('FAB clicked');
-          navigateToDetail(Note('', '', 2), 'Add Note');
-        },
-
-        tooltip: 'Add Note',
-
-        child: Icon(Icons.add),
-
-      ),
+      
     );
   }
   Widget makeItem({image, title}) {
