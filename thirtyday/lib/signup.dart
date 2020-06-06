@@ -48,7 +48,6 @@ class SignUp extends StatelessWidget{
                           child: GestureDetector(
                             onTap: () { Navigator.of(context).pushNamed("/SecondPage");},
                             child: Center(
-
                               child: Text('SIGN UP', style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold, fontSize: 16),
                               ) ,
                             ),

@@ -77,10 +77,15 @@ class NoteListState extends State<NoteList> {
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    FadeAnimation(1, Text("Discover", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 20),)),
+                    Container(child: FadeAnimation(1, Text("Discover", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 20),)),
+                      padding: EdgeInsets.only(left: 10.0),
+                    ),
+                    
                     SizedBox(height: 20,),
                     FadeAnimation(1.4, Container(
+                      //padding: EdgeInsets.only(left: 10.0),
                       height: 200,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
@@ -129,8 +134,9 @@ class NoteListState extends State<NoteList> {
                           //subtitle: Text('swipe right', style: TextStyle(fontSize: 16, color: Colors.black, ),),
                           // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
                           trailing: Icon(Icons.keyboard_arrow_right, size: 50), onTap: (){
-                              //_page.animateToPage(1, curve: null, duration: null);
-                                _page.jumpToPage(1);
+                              _page.animateToPage(1, curve: Curves.easeInQuad, duration: Duration(milliseconds: 100));
+                                
+                                //_page.jumpToPage(1);
                           },
                         ),
                         Padding(padding: EdgeInsets.all(3)),
