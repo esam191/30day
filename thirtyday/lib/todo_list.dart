@@ -314,7 +314,7 @@ class NoteListState extends State<NoteList> {
                      this.noteList[position].cardColor= Color.fromRGBO(111, 194, 173, 1.0);
                    }else
                    {
-                     this.noteList[position].cardColor= Color.fromRGBO(231, 129, 109, 1.0);
+                     this.noteList[position].cardColor= Colors.white; //Color.fromRGBO(231, 129, 109, 1.0);
                    }
                   
                   debugPrint('checkboxclicked');

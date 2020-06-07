@@ -8,7 +8,7 @@ class Note {
   String _date;
   int _priority;
   bool _isChecked = false;
-  Color _color = Color.fromRGBO(231, 129, 109, 1.0);
+  Color _color; //Color.fromRGBO(231, 129, 109, 1.0);
   Note(this._title, this._date, this._priority, this._isChecked, [this._description]);
 
   Note.withId(this._id, this._title, this._date, this._priority, this._isChecked, [this._description]);
