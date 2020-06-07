@@ -55,8 +55,29 @@ class NoteListState extends State<NoteList> {
             color: Colors.grey[50],
             child: ListView(
               children: <Widget>[
-                Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 5),),
-                ClipRRect(
+                Padding(padding: EdgeInsets.fromLTRB(20, 5, 20, 5),),
+                Container(
+                  height: 220,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/img4.jpg'),
+                    ),
+                    color: Colors.blue,
+                  ),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.all(15),
+                    leading: Icon(OMIcons.whatshot, color: Colors.deepOrange, size: 30,),
+                    title: Text('Newbie', style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),),
+                    subtitle: Text('20,365', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold ),),
+                    // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
+                    trailing: Icon(OMIcons.localBar, size: 60), onTap: (){},
+                  ),
+
+                ),
+
+               /* ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
                   child: Card(
                     //elevation: 40,
@@ -65,25 +86,25 @@ class NoteListState extends State<NoteList> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        Padding(padding: EdgeInsets.all(5)),
+                       Padding(padding: EdgeInsets.all(15)),
                         ListTile(
                           leading: Icon(OMIcons.whatshot, color: Colors.deepOrange, size: 30,),
-                          title: Text('Newbie', style: TextStyle(fontSize: 22, color: Colors.white),),
-                          subtitle: Text('20,365', style: TextStyle(fontSize: 16, color: Colors.white, ),),
+                          title: Text('Newbie', style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),),
+                          subtitle: Text('20,365', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold ),),
                           // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
-                          trailing: Icon(OMIcons.localBar, size: 50), onTap: (){},
+                          trailing: Icon(OMIcons.localBar, size: 60), onTap: (){},
                         ),
-                        Padding(padding: EdgeInsets.all(30)),
+                       Padding(padding: EdgeInsets.all(60)),
                       ],
                     ),
                   ),
-                ),
+                ), */
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(child: FadeAnimation(1, Text("Discover", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 20),)),
-                      padding: EdgeInsets.only(left: 10.0),
+                      padding: EdgeInsets.only(left: 12.0, top: 10.0),
                     ),
                     
                     SizedBox(height: 20,),
@@ -100,23 +121,30 @@ class NoteListState extends State<NoteList> {
                         ],
                       ),
                     )),
-                  /*
-                    SizedBox(height: 20,),
-                   FadeAnimation(1, Text("Best Hotels", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 20),)),
+                   SizedBox(height: 20,),
+
+                   /*
+                   Container( child:
+                   FadeAnimation(1, Text("Best Hotels", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 20), )),
+                     padding: EdgeInsets.only(left: 12.0),
+                   ),
+
                     SizedBox(height: 20,),
                     FadeAnimation(1.4, Container(
                       height: 200,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          makeItem(image: 'assets/images/united-states.jpg', title: 'Canada'),
-                          makeItem(image: 'assets/images/greece.jpg', title: 'Italy'),
-                          makeItem(image: 'assets/images/Italy.jpg', title: 'Greece'),
-                          makeItem(image: 'assets/images/canada.jpg', title: 'United States')
+                          makeItem(image: 'images/img3.png', title: 'Greece'),
+                          makeItem(image: 'images/img2.png', title: 'Italy'),
+                          makeItem(image: 'images/img2.png', title: 'Italy'),
+                          makeItem(image: 'images/img1.png', title: 'United States'),
                         ],
                       ),
-                    )), */
-                    SizedBox(height: 40,),
+                    )),
+
+                    */
+                    SizedBox(height: 20,),
                   ],
                 ),
 
@@ -126,23 +154,24 @@ class NoteListState extends State<NoteList> {
                     //elevation: 40,
                     color:
                     //Color(0xFF42A5F5),
-                    Colors.white30,
+                    Colors.black54,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         Padding(padding: EdgeInsets.all(5)),
                         ListTile(
                           leading: Icon(OMIcons.dataUsage, color: Colors.deepOrange, size: 30,),
-                          title: Text('Challenges', style: TextStyle(fontSize: 22, color: Colors.black),),
+                          title: Text('Challenges', style: TextStyle(fontSize: 22, color: Colors.white),),
                           //subtitle: Text('swipe right', style: TextStyle(fontSize: 16, color: Colors.black, ),),
                           // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
                           trailing: Icon(Icons.keyboard_arrow_right, size: 50), onTap: (){
-                              _page.animateToPage(1, curve: Curves.easeInQuad, duration: Duration(milliseconds: 100));
+                              _page.animateToPage(1, curve: Curves.easeInQuad, duration: Duration(milliseconds: 300));
                                 
                                 //_page.jumpToPage(1);
                           },
                         ),
-                        Padding(padding: EdgeInsets.all(3)),
+                        //Padding(padding: EdgeInsets.all(1)),
+                        SizedBox(height: 25,),
                       ],
                     ),
                   ),
@@ -222,12 +251,7 @@ class NoteListState extends State<NoteList> {
           )
       ),
       backgroundColor: Colors.white,//Color(0xFFEEEEEE),
-
-
-
       //getNoteListView(),
-
-      
     );
   }
   Widget makeItem({image, title}) {
@@ -256,7 +280,7 @@ class NoteListState extends State<NoteList> {
           ),
           child: Align(
             alignment: Alignment.bottomLeft,
-            child: Text(title, style: TextStyle(color: Colors.white, fontSize: 20),),
+            child: Text(title, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
           ),
         ),
       ),
