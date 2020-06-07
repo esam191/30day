@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:thirtyday/challenges.dart';
 import 'package:thirtyday/database_helper.dart';
+import 'package:thirtyday/homepage.dart';
 import 'package:thirtyday/todo_detail.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
@@ -27,10 +29,8 @@ class NoteListState extends State<NoteList> {
   DatabaseHelper databaseHelper = DatabaseHelper();
   List<Note> noteList;
   int count = 0;
-
   @override
   Widget build(BuildContext context) {
-
     if (noteList == null) {
       noteList = List<Note>();
       updateListView();
@@ -198,6 +198,7 @@ class NoteListState extends State<NoteList> {
                      onPressed: () {
                       debugPrint('FAB clicked');
                       navigateToDetail(Note('', '', 2, false), 'Add Note');
+                       //navigateToDetail(Note('', '', 2, false), 'Add Note');
                     },
                     tooltip: 'Add Note',
                     child: Icon(Icons.add),
@@ -287,22 +288,27 @@ class NoteListState extends State<NoteList> {
     );
   }
   ListView getNoteListView() {
+    Set<Note> _saved = <Note>{};
     TextStyle titleStyle = Theme.of(context).textTheme.subhead;
     return ListView.builder(
       padding: EdgeInsets.fromLTRB(10, 15, 10, 15),
       itemCount: count,
       itemBuilder: (BuildContext context, int position) {
+        int countr = position+1;
+        //final dateStarted = this.noteList[position].dateDT;
+       // final dateNow = DateTime.now();
+        //final difference = dateNow.difference(dateStarted).inDays;
         return Card(
           //color: Color(0xFF333366),
-         color: this.noteList[position].cardColor,
+         color: Colors.pinkAccent,//_saved.contains(this.noteList[position]) ? Color.fromRGBO(111, 194, 173, 1.0): Colors.white,
          //color: Color.fromRGBO(99, 138, 223, 1.0),
          //color: Color.fromRGBO(111, 194, 173, 1.0),
           elevation: 4.0,
           child: ListTile(
             contentPadding: EdgeInsets.all(15.0),
             leading: CircleAvatar(
-              backgroundColor: getPriorityColor(this.noteList[position].priority),
-              child: getPriorityIcon(this.noteList[position].priority),
+              backgroundColor: Color.fromRGBO(99, 138, 223, 1.0),//getPriorityColor(this.noteList[position].priority),
+              child: Text('$countr'),//getPriorityIcon(this.noteList[position].priority),
             ),
             title: Text(this.noteList[position].title, style: titleStyle,),
             subtitle: Text(this.noteList[position].date),
@@ -311,15 +317,16 @@ class NoteListState extends State<NoteList> {
                 setState(() {
                    this.noteList[position].isChecked = value;
                    if(value){
+                     _saved.add(this.noteList[position]);
                      this.noteList[position].cardColor= Color.fromRGBO(111, 194, 173, 1.0);
                    }else
                    {
+                     _saved.remove(this.noteList[position]);
                      this.noteList[position].cardColor= Colors.white; //Color.fromRGBO(231, 129, 109, 1.0);
                    }
-                  
+                   debugPrint(_saved.toList().toString());
                   debugPrint('checkboxclicked');
-                });
-                  
+                });   
               },),
               //Icon(Icons.check_box, color: Colors.grey,),
               
@@ -328,8 +335,8 @@ class NoteListState extends State<NoteList> {
                // _delete(context, noteList[position]);
               //},
             //),
-            onTap: () {
-              debugPrint("ListTile Tapped");
+            onLongPress: () {
+              debugPrint("ListTile long pressed");
               navigateToDetail(this.noteList[position],'Edit Note');
             },
           ),

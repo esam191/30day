@@ -6,6 +6,7 @@ class Note {
   String _title;
   String _description;
   String _date;
+  //DateTime _dateDT;
   int _priority;
   bool _isChecked = false;
   Color _color; //Color.fromRGBO(231, 129, 109, 1.0);
@@ -23,6 +24,7 @@ class Note {
 
   String get date => _date;
 
+  // DateTime get dateDT => _dateDT;
   bool get isChecked => _isChecked;
   
   Color get cardColor => _color;
@@ -51,6 +53,9 @@ class Note {
   set date(String newDate) {
     this._date = newDate;
   }
+  //set dateDT(DateTime nDate){
+  //  this._dateDT = nDate;
+  //}
   set isChecked(bool isCheck){
     this._isChecked = isCheck;
   }
@@ -65,6 +70,7 @@ class Note {
     map['description'] = _description;
     map['priority'] = _priority;
     map['date'] = _date;
+    //map['dateDT'] = _dateDT;
 
     return map;
   }
@@ -76,5 +82,6 @@ class Note {
     this._description = map['description'];
     this._priority = map['priority'];
     this._date = map['date'];
+    //this._dateDT = map['dateDT'];
   }
 }

@@ -225,6 +225,7 @@ class NoteDetailState extends State<NoteDetail> {
     moveToLastScreen();
 
     note.date = DateFormat.yMMMd().format(DateTime.now());
+   // note.dateDT = DateTime.now();
     int result;
     if (note.id != null) {  // Case 1: Update operation
       result = await helper.updateNote(note);
