@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 class Note {
 
   int _id;
@@ -5,10 +7,11 @@ class Note {
   String _description;
   String _date;
   int _priority;
+  bool _isChecked = false;
+  Color _color = Color.fromRGBO(231, 129, 109, 1.0);
+  Note(this._title, this._date, this._priority, this._isChecked, [this._description]);
 
-  Note(this._title, this._date, this._priority, [this._description]);
-
-  Note.withId(this._id, this._title, this._date, this._priority, [this._description]);
+  Note.withId(this._id, this._title, this._date, this._priority, this._isChecked, [this._description]);
 
   int get id => _id;
 
@@ -20,6 +23,13 @@ class Note {
 
   String get date => _date;
 
+  bool get isChecked => _isChecked;
+  
+  Color get cardColor => _color;
+
+  set cardColor(Color c){
+    this._color = c;
+  }
   set title(String newTitle) {
     if (newTitle.length <= 255) {
       this._title = newTitle;
@@ -41,7 +51,9 @@ class Note {
   set date(String newDate) {
     this._date = newDate;
   }
-
+  set isChecked(bool isCheck){
+    this._isChecked = isCheck;
+  }
   // Convert a Note object into a Map object
   Map<String, dynamic> toMap() {
 

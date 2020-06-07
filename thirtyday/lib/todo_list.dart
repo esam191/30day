@@ -20,6 +20,7 @@ class NoteList extends StatefulWidget {
 }
 
 class NoteListState extends State<NoteList> {
+ 
   static final PageController _page = PageController(
     initialPage: 0,
   );
@@ -44,6 +45,7 @@ class NoteListState extends State<NoteList> {
       ),
       drawer: MainDrawer(),
       body: PageView(
+        
         controller: _page,
         onPageChanged: (int) {
          print('Page Changes to index $int');  
@@ -58,7 +60,8 @@ class NoteListState extends State<NoteList> {
                   borderRadius: BorderRadius.circular(20.0),
                   child: Card(
                     //elevation: 40,
-                    color: Color(0xFF42A5F5),//Colors.blueAccent,
+                    //color:Color.fromRGBO(111, 194, 173, 1.0),//Colors.blueAccent,
+                    color: Color.fromRGBO(99, 138, 223, 1.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
@@ -165,7 +168,7 @@ class NoteListState extends State<NoteList> {
             floatingActionButton:FloatingActionButton(
                      onPressed: () {
                       debugPrint('FAB clicked');
-                      navigateToDetail(Note('', '', 2), 'Add Note');
+                      navigateToDetail(Note('', '', 2, false), 'Add Note');
                     },
                     tooltip: 'Add Note',
                     child: Icon(Icons.add),
@@ -266,7 +269,10 @@ class NoteListState extends State<NoteList> {
       itemCount: count,
       itemBuilder: (BuildContext context, int position) {
         return Card(
-          color: Colors.white,
+          //color: Color(0xFF333366),
+         color: this.noteList[position].cardColor,
+         //color: Color.fromRGBO(99, 138, 223, 1.0),
+         //color: Color.fromRGBO(111, 194, 173, 1.0),
           elevation: 4.0,
           child: ListTile(
             contentPadding: EdgeInsets.all(15.0),
@@ -276,12 +282,28 @@ class NoteListState extends State<NoteList> {
             ),
             title: Text(this.noteList[position].title, style: titleStyle,),
             subtitle: Text(this.noteList[position].date),
-            trailing: GestureDetector(
-              child: Icon(Icons.delete, color: Colors.grey,),
-              onTap: () {
-                _delete(context, noteList[position]);
-              },
-            ),
+            trailing: //GestureDetector(
+              Checkbox(activeColor:Colors.green ,value: this.noteList[position].isChecked, onChanged: (value){
+                setState(() {
+                   this.noteList[position].isChecked = value;
+                   if(value){
+                     this.noteList[position].cardColor= Color.fromRGBO(111, 194, 173, 1.0);
+                   }else
+                   {
+                     this.noteList[position].cardColor= Color.fromRGBO(231, 129, 109, 1.0);
+                   }
+                  
+                  debugPrint('checkboxclicked');
+                });
+                  
+              },),
+              //Icon(Icons.check_box, color: Colors.grey,),
+              
+              
+              //onTap: () {
+               // _delete(context, noteList[position]);
+              //},
+            //),
             onTap: () {
               debugPrint("ListTile Tapped");
               navigateToDetail(this.noteList[position],'Edit Note');

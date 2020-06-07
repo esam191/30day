@@ -12,6 +12,7 @@ import 'package:thirtyday/todo_list.dart';
 void main() {
   runApp(MaterialApp(
     home: AppIntro(),
+    theme: ThemeData(primaryColor: Colors.blue),
     routes: <String, WidgetBuilder> {
       "/SecondPage": (BuildContext context) => ThirtyDay(),
       "/IntroPage": (BuildContext context) => AppIntro(),
