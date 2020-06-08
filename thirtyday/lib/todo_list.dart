@@ -1,10 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:thirtyday/challenges.dart';
 import 'package:thirtyday/database_helper.dart';
-import 'package:thirtyday/homepage.dart';
 import 'package:thirtyday/todo_detail.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
@@ -22,15 +20,16 @@ class NoteList extends StatefulWidget {
 }
 
 class NoteListState extends State<NoteList> {
- 
   static final PageController _page = PageController(
     initialPage: 0,
   );
   DatabaseHelper databaseHelper = DatabaseHelper();
   List<Note> noteList;
   int count = 0;
+
   @override
   Widget build(BuildContext context) {
+
     if (noteList == null) {
       noteList = List<Note>();
       updateListView();
@@ -45,7 +44,6 @@ class NoteListState extends State<NoteList> {
       ),
       drawer: MainDrawer(),
       body: PageView(
-        
         controller: _page,
         onPageChanged: (int) {
          print('Page Changes to index $int');  
@@ -55,61 +53,34 @@ class NoteListState extends State<NoteList> {
             color: Colors.grey[50],
             child: ListView(
               children: <Widget>[
-                Padding(padding: EdgeInsets.fromLTRB(20, 5, 20, 5),),
-                Container(
-                  height: 220,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('images/img4.jpg'),
-                    ),
-                    color: Colors.blue,
-                  ),
-                  child: ListTile(
-                    contentPadding: EdgeInsets.all(15),
-                    leading: Icon(OMIcons.whatshot, color: Colors.deepOrange, size: 30,),
-                    title: Text('Newbie', style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),),
-                    subtitle: Text('20,365', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold ),),
-                    // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
-                    trailing: Icon(OMIcons.localBar, size: 60), onTap: (){},
-                  ),
-
-                ),
-
-               /* ClipRRect(
+                Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 5),),
+                ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
                   child: Card(
                     //elevation: 40,
-                    //color:Color.fromRGBO(111, 194, 173, 1.0),//Colors.blueAccent,
-                    color: Color.fromRGBO(99, 138, 223, 1.0),
+                    color: Color(0xFF42A5F5),//Colors.blueAccent,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                       Padding(padding: EdgeInsets.all(15)),
+                        Padding(padding: EdgeInsets.all(5)),
                         ListTile(
                           leading: Icon(OMIcons.whatshot, color: Colors.deepOrange, size: 30,),
-                          title: Text('Newbie', style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),),
-                          subtitle: Text('20,365', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold ),),
+                          title: Text('Newbie', style: TextStyle(fontSize: 22, color: Colors.white),),
+                          subtitle: Text('20,365', style: TextStyle(fontSize: 16, color: Colors.white, ),),
                           // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
-                          trailing: Icon(OMIcons.localBar, size: 60), onTap: (){},
+                          trailing: Icon(OMIcons.localBar, size: 50), onTap: (){},
                         ),
-                       Padding(padding: EdgeInsets.all(60)),
+                        Padding(padding: EdgeInsets.all(30)),
                       ],
                     ),
                   ),
-                ), */
+                ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Container(child: FadeAnimation(1, Text("Discover", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 20),)),
-                      padding: EdgeInsets.only(left: 12.0, top: 10.0),
-                    ),
-                    
+                    FadeAnimation(1, Text("Discover", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 20),)),
                     SizedBox(height: 20,),
                     FadeAnimation(1.4, Container(
-                      //padding: EdgeInsets.only(left: 10.0),
                       height: 200,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
@@ -121,30 +92,23 @@ class NoteListState extends State<NoteList> {
                         ],
                       ),
                     )),
-                   SizedBox(height: 20,),
-
-                   /*
-                   Container( child:
-                   FadeAnimation(1, Text("Best Hotels", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 20), )),
-                     padding: EdgeInsets.only(left: 12.0),
-                   ),
-
+                  /*
+                    SizedBox(height: 20,),
+                   FadeAnimation(1, Text("Best Hotels", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 20),)),
                     SizedBox(height: 20,),
                     FadeAnimation(1.4, Container(
                       height: 200,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          makeItem(image: 'images/img3.png', title: 'Greece'),
-                          makeItem(image: 'images/img2.png', title: 'Italy'),
-                          makeItem(image: 'images/img2.png', title: 'Italy'),
-                          makeItem(image: 'images/img1.png', title: 'United States'),
+                          makeItem(image: 'assets/images/united-states.jpg', title: 'Canada'),
+                          makeItem(image: 'assets/images/greece.jpg', title: 'Italy'),
+                          makeItem(image: 'assets/images/Italy.jpg', title: 'Greece'),
+                          makeItem(image: 'assets/images/canada.jpg', title: 'United States')
                         ],
                       ),
-                    )),
-
-                    */
-                    SizedBox(height: 20,),
+                    )), */
+                    SizedBox(height: 40,),
                   ],
                 ),
 
@@ -154,24 +118,22 @@ class NoteListState extends State<NoteList> {
                     //elevation: 40,
                     color:
                     //Color(0xFF42A5F5),
-                    Colors.black54,
+                    Colors.white30,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         Padding(padding: EdgeInsets.all(5)),
                         ListTile(
                           leading: Icon(OMIcons.dataUsage, color: Colors.deepOrange, size: 30,),
-                          title: Text('Challenges', style: TextStyle(fontSize: 22, color: Colors.white),),
+                          title: Text('Challenges', style: TextStyle(fontSize: 22, color: Colors.black),),
                           //subtitle: Text('swipe right', style: TextStyle(fontSize: 16, color: Colors.black, ),),
                           // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
                           trailing: Icon(Icons.keyboard_arrow_right, size: 50), onTap: (){
-                              _page.animateToPage(1, curve: Curves.easeInQuad, duration: Duration(milliseconds: 300));
-                                
-                                //_page.jumpToPage(1);
+                              _page.animateToPage(3, curve: Curves.ease, duration: Duration.)
+                               // _page.jumpToPage(1);
                           },
                         ),
-                        //Padding(padding: EdgeInsets.all(1)),
-                        SizedBox(height: 25,),
+                        Padding(padding: EdgeInsets.all(3)),
                       ],
                     ),
                   ),
@@ -197,8 +159,7 @@ class NoteListState extends State<NoteList> {
             floatingActionButton:FloatingActionButton(
                      onPressed: () {
                       debugPrint('FAB clicked');
-                      navigateToDetail(Note('', '', 2, false), 'Add Note');
-                       //navigateToDetail(Note('', '', 2, false), 'Add Note');
+                      navigateToDetail(Note('', '', 2), 'Add Note');
                     },
                     tooltip: 'Add Note',
                     child: Icon(Icons.add),
@@ -252,7 +213,12 @@ class NoteListState extends State<NoteList> {
           )
       ),
       backgroundColor: Colors.white,//Color(0xFFEEEEEE),
+
+
+
       //getNoteListView(),
+
+      
     );
   }
   Widget makeItem({image, title}) {
@@ -281,62 +247,37 @@ class NoteListState extends State<NoteList> {
           ),
           child: Align(
             alignment: Alignment.bottomLeft,
-            child: Text(title, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+            child: Text(title, style: TextStyle(color: Colors.white, fontSize: 20),),
           ),
         ),
       ),
     );
   }
   ListView getNoteListView() {
-    Set<Note> _saved = <Note>{};
     TextStyle titleStyle = Theme.of(context).textTheme.subhead;
     return ListView.builder(
       padding: EdgeInsets.fromLTRB(10, 15, 10, 15),
       itemCount: count,
       itemBuilder: (BuildContext context, int position) {
-        int countr = position+1;
-        //final dateStarted = this.noteList[position].dateDT;
-       // final dateNow = DateTime.now();
-        //final difference = dateNow.difference(dateStarted).inDays;
         return Card(
-          //color: Color(0xFF333366),
-         color: Colors.pinkAccent,//_saved.contains(this.noteList[position]) ? Color.fromRGBO(111, 194, 173, 1.0): Colors.white,
-         //color: Color.fromRGBO(99, 138, 223, 1.0),
-         //color: Color.fromRGBO(111, 194, 173, 1.0),
+          color: Colors.white,
           elevation: 4.0,
           child: ListTile(
             contentPadding: EdgeInsets.all(15.0),
             leading: CircleAvatar(
-              backgroundColor: Color.fromRGBO(99, 138, 223, 1.0),//getPriorityColor(this.noteList[position].priority),
-              child: Text('$countr'),//getPriorityIcon(this.noteList[position].priority),
+              backgroundColor: getPriorityColor(this.noteList[position].priority),
+              child: getPriorityIcon(this.noteList[position].priority),
             ),
             title: Text(this.noteList[position].title, style: titleStyle,),
             subtitle: Text(this.noteList[position].date),
-            trailing: //GestureDetector(
-              Checkbox(activeColor:Colors.green ,value: this.noteList[position].isChecked, onChanged: (value){
-                setState(() {
-                   this.noteList[position].isChecked = value;
-                   if(value){
-                     _saved.add(this.noteList[position]);
-                     this.noteList[position].cardColor= Color.fromRGBO(111, 194, 173, 1.0);
-                   }else
-                   {
-                     _saved.remove(this.noteList[position]);
-                     this.noteList[position].cardColor= Colors.white; //Color.fromRGBO(231, 129, 109, 1.0);
-                   }
-                   debugPrint(_saved.toList().toString());
-                  debugPrint('checkboxclicked');
-                });   
-              },),
-              //Icon(Icons.check_box, color: Colors.grey,),
-              
-              
-              //onTap: () {
-               // _delete(context, noteList[position]);
-              //},
-            //),
-            onLongPress: () {
-              debugPrint("ListTile long pressed");
+            trailing: GestureDetector(
+              child: Icon(Icons.delete, color: Colors.grey,),
+              onTap: () {
+                _delete(context, noteList[position]);
+              },
+            ),
+            onTap: () {
+              debugPrint("ListTile Tapped");
               navigateToDetail(this.noteList[position],'Edit Note');
             },
           ),
