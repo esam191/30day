@@ -129,7 +129,7 @@ class NoteListState extends State<NoteList> {
                           //subtitle: Text('swipe right', style: TextStyle(fontSize: 16, color: Colors.black, ),),
                           // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
                           trailing: Icon(Icons.keyboard_arrow_right, size: 50), onTap: (){
-                              _page.animateToPage(3, curve: Curves.ease, duration: Duration.)
+                              _page.animateToPage(3, curve: Curves.ease);
                                // _page.jumpToPage(1);
                           },
                         ),
@@ -159,7 +159,7 @@ class NoteListState extends State<NoteList> {
             floatingActionButton:FloatingActionButton(
                      onPressed: () {
                       debugPrint('FAB clicked');
-                      navigateToDetail(Note('', '', 2), 'Add Note');
+                      navigateToDetail(Note('', '', 2, false), 'Add Note');
                     },
                     tooltip: 'Add Note',
                     child: Icon(Icons.add),
