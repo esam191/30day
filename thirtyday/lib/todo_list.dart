@@ -103,11 +103,11 @@ class NoteListState extends State<NoteList> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Container(child: FadeAnimation(1, Text("Discover", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 20),)),
-                      padding: EdgeInsets.only(left: 12.0, top: 10.0),
+                    Container(child: FadeAnimation(1, Text("Discover", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800], fontSize: 22),)),
+                      padding: EdgeInsets.only(left: 12.0, top: 15.0),
                     ),
-                    
-                    SizedBox(height: 20,),
+
+                    SizedBox(height: 10,),
                     FadeAnimation(1.4, Container(
                       //padding: EdgeInsets.only(left: 10.0),
                       height: 200,
@@ -153,7 +153,7 @@ class NoteListState extends State<NoteList> {
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage('images/img4.jpg'),
+                      image: AssetImage('images/img9.jpg'),
                     ),
                     color: Colors.blue,
                   ),
@@ -187,7 +187,9 @@ class NoteListState extends State<NoteList> {
           Scaffold(
             body:Container(
                     child: getNoteListView(),
-                    color: Colors.grey[50],
+                   // color: Colors.grey[50],
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 85),
+                    //color: Colors.grey[50],
                   ),
             floatingActionButton:FloatingActionButton(
                      onPressed: () {
@@ -197,7 +199,7 @@ class NoteListState extends State<NoteList> {
                     },
                     tooltip: 'Add Note',
                     child: Icon(Icons.add),
-                ),   
+                ),
           )
           
         ],
