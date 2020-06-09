@@ -6,13 +6,13 @@ class Note {
   String _title;
   String _description;
   String _date;
-  //DateTime _dateDT;
   int _priority;
+  int _progress = 0;
   bool _isChecked = false;
   Color _color; //Color.fromRGBO(231, 129, 109, 1.0);
-  Note(this._title, this._date, this._priority, this._isChecked, [this._description]);
+  Note(this._title, this._date, this._priority, this._isChecked, this._progress, [this._description]);
 
-  Note.withId(this._id, this._title, this._date, this._priority, this._isChecked, [this._description]);
+  Note.withId(this._id, this._title, this._date, this._priority, this._isChecked, this._progress, [this._description]);
 
   int get id => _id;
 
@@ -24,6 +24,7 @@ class Note {
 
   String get date => _date;
 
+  int get progress => _progress;
   // DateTime get dateDT => _dateDT;
   bool get isChecked => _isChecked;
   
@@ -53,11 +54,15 @@ class Note {
   set date(String newDate) {
     this._date = newDate;
   }
-  //set dateDT(DateTime nDate){
-  //  this._dateDT = nDate;
-  //}
+ 
   set isChecked(bool isCheck){
     this._isChecked = isCheck;
+  }
+
+  set progress(int prog){
+    if(prog >= 0 && prog <= 30){
+      this._progress = prog;
+    }
   }
   // Convert a Note object into a Map object
   Map<String, dynamic> toMap() {
@@ -70,7 +75,7 @@ class Note {
     map['description'] = _description;
     map['priority'] = _priority;
     map['date'] = _date;
-    //map['dateDT'] = _dateDT;
+    map['progress'] = _progress;
 
     return map;
   }
@@ -82,6 +87,6 @@ class Note {
     this._description = map['description'];
     this._priority = map['priority'];
     this._date = map['date'];
-    //this._dateDT = map['dateDT'];
+    this._progress = map['progress'];
   }
 }

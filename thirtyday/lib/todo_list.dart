@@ -22,7 +22,7 @@ class NoteList extends StatefulWidget {
 }
 
 class NoteListState extends State<NoteList> {
- 
+
   static final PageController _page = PageController(
     initialPage: 0,
   );
@@ -194,7 +194,7 @@ class NoteListState extends State<NoteList> {
             floatingActionButton:FloatingActionButton(
                      onPressed: () {
                       debugPrint('FAB clicked');
-                      navigateToDetail(Note('', '', 2, false), 'Add Note');
+                      navigateToDetail(Note('', '', 2, false,0), 'Add Note');
                        //navigateToDetail(Note('', '', 2, false), 'Add Note');
                     },
                     tooltip: 'Add Note',
@@ -279,7 +279,7 @@ class NoteListState extends State<NoteList> {
           child: Align(
             alignment: Alignment.bottomLeft,
             child: Text(title, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-          ),
+          ),//ggggg
         ),
       ),
     );
@@ -292,12 +292,13 @@ class NoteListState extends State<NoteList> {
       itemCount: count,
       itemBuilder: (BuildContext context, int position) {
         int countr = position+1;
+        int prog = this.noteList[position].progress;
         //final dateStarted = this.noteList[position].dateDT;
        // final dateNow = DateTime.now();
         //final difference = dateNow.difference(dateStarted).inDays;
         return Card(
           //color: Color(0xFF333366),
-         color: Colors.pinkAccent,//_saved.contains(this.noteList[position]) ? Color.fromRGBO(111, 194, 173, 1.0): Colors.white,
+         color: Colors.pink[300],//_saved.contains(this.noteList[position]) ? Color.fromRGBO(111, 194, 173, 1.0): Colors.white,
          //color: Color.fromRGBO(99, 138, 223, 1.0),
          //color: Color.fromRGBO(111, 194, 173, 1.0),
           elevation: 4.0,
@@ -308,31 +309,31 @@ class NoteListState extends State<NoteList> {
               child: Text('$countr'),//getPriorityIcon(this.noteList[position].priority),
             ),
             title: Text(this.noteList[position].title, style: titleStyle,),
-            subtitle: Text(this.noteList[position].date),
+            subtitle: Text('$prog'),
             trailing: //GestureDetector(
-              Checkbox(activeColor:Colors.green ,value: this.noteList[position].isChecked, onChanged: (value){
+              Wrap(children: <Widget>[
+                //if(prog == 0) Icon(OMIcons.whatshot),
+                Checkbox(activeColor:Colors.green ,value: this.noteList[position].isChecked, onChanged: (value){
                 setState(() {
                    this.noteList[position].isChecked = value;
                    if(value){
-                     _saved.add(this.noteList[position]);
-                     this.noteList[position].cardColor= Color.fromRGBO(111, 194, 173, 1.0);
+                     this.noteList[position].progress = this.noteList[position].progress + 1;
+                     //_saved.add(this.noteList[position]);
+                     //this.noteList[position].cardColor= Color.fromRGBO(111, 194, 173, 1.0);
                    }else
                    {
-                     _saved.remove(this.noteList[position]);
-                     this.noteList[position].cardColor= Colors.white; //Color.fromRGBO(231, 129, 109, 1.0);
+                     this.noteList[position].progress = this.noteList[position].progress - 1;
+                     //_saved.remove(this.noteList[position]);
+                     //this.noteList[position].cardColor= Colors.white; //Color.fromRGBO(231, 129, 109, 1.0);
                    }
                    debugPrint(_saved.toList().toString());
                   debugPrint('checkboxclicked');
-                });   
-              },),
-              //Icon(Icons.check_box, color: Colors.grey,),
-              
-              
-              //onTap: () {
-               // _delete(context, noteList[position]);
-              //},
-            //),
-            onLongPress: () {
+                  });   
+                },),
+
+
+              ],),
+              onLongPress: () {
               debugPrint("ListTile long pressed");
               navigateToDetail(this.noteList[position],'Edit Note');
             },

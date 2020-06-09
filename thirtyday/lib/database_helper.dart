@@ -15,7 +15,7 @@ class DatabaseHelper {
   String colDescription = 'description';
   String colPriority = 'priority';
   String colDate = 'date';
-
+  String colProgress = 'progress';
   DatabaseHelper._createInstance(); // Named constructor to create instance of DatabaseHelper
 
   factory DatabaseHelper() {
@@ -40,14 +40,14 @@ class DatabaseHelper {
     String path = directory.path + 'notes.db';
 
     // Open/create the database at a given path
-    var notesDatabase = await openDatabase(path, version: 1, onCreate: _createDb);
+    var notesDatabase = await openDatabase(path, version: 1, onCreate: _createDb); // TODO: onupgrade  One better approach is, drop and recreate all tables in onUpdate method, and increase the db version every time you change the schema.
     return notesDatabase;
   }
 
   void _createDb(Database db, int newVersion) async {
 
     await db.execute('CREATE TABLE $noteTable($colId INTEGER PRIMARY KEY AUTOINCREMENT, $colTitle TEXT, '
-        '$colDescription TEXT, $colPriority INTEGER, $colDate TEXT)');
+        '$colDescription TEXT, $colPriority INTEGER, $colDate TEXT, $colProgress INTEGER)');
   }
 
   // Fetch Operation: Get all note objects from database
