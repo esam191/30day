@@ -59,6 +59,10 @@ flutter:
     - images/img2.png
     - images/img3.png
     - images/img4.jpg
+    - images/img5.jpg
+    - images/img6.gif
+    - images/img7.gif
+    - images/img8.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

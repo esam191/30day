@@ -72,7 +72,7 @@ class NoteListState extends State<NoteList> {
                     title: Text('Newbie', style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),),
                     subtitle: Text('20,365', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold ),),
                     // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
-                    trailing: Icon(OMIcons.localBar, size: 60), onTap: (){},
+                    trailing: Icon(OMIcons.localBar, size: 60, color: Colors.white,), onTap: (){},
                   ),
 
                 ),
@@ -114,10 +114,10 @@ class NoteListState extends State<NoteList> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          makeItem(image: 'images/img1.png', title: 'Canada'),
-                          makeItem(image: 'images/img2.png', title: 'Italy'),
-                          makeItem(image: 'images/img3.png', title: 'Greece'),
-                          makeItem(image: 'images/img1.png', title: 'United States')
+                          makeItem(image: 'images/img5.jpg', title: 'Get Started'),
+                          makeItem(image: 'images/img6.gif', title: 'Quotes'),
+                          makeItem(image: 'images/img7.gif', title: 'Achievements'),
+                          makeItem(image: 'images/img8.jpg', title: 'Support'),
                         ],
                       ),
                     )),
@@ -147,35 +147,30 @@ class NoteListState extends State<NoteList> {
                     SizedBox(height: 20,),
                   ],
                 ),
-
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(30.0),
-                  child: Card(
-                    //elevation: 40,
-                    color:
-                    //Color(0xFF42A5F5),
-                    Colors.black54,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Padding(padding: EdgeInsets.all(5)),
-                        ListTile(
-                          leading: Icon(OMIcons.dataUsage, color: Colors.deepOrange, size: 30,),
-                          title: Text('Challenges', style: TextStyle(fontSize: 22, color: Colors.white),),
-                          //subtitle: Text('swipe right', style: TextStyle(fontSize: 16, color: Colors.black, ),),
-                          // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
-                          trailing: Icon(Icons.keyboard_arrow_right, size: 50), onTap: (){
-                              _page.animateToPage(1, curve: Curves.easeInQuad, duration: Duration(milliseconds: 300));
-                                
-                                //_page.jumpToPage(1);
-                          },
-                        ),
-                        //Padding(padding: EdgeInsets.all(1)),
-                        SizedBox(height: 25,),
-                      ],
+                Container(
+                  height: 90,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/img4.jpg'),
                     ),
+                    color: Colors.blue,
+                  ),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.all(15),
+                    leading: Icon(OMIcons.dataUsage, color: Colors.deepOrange, size: 30,),
+                    title: Text('Challenges', style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),),
+                    //subtitle: Text('swipe right', style: TextStyle(fontSize: 16, color: Colors.black, ),),
+                    // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
+                    trailing: Icon(Icons.keyboard_arrow_right, size: 50, color: Colors.white,), onTap: (){
+                    _page.animateToPage(1, curve: Curves.easeInQuad, duration: Duration(milliseconds: 300));
+
+                    //_page.jumpToPage(1);
+                  },
                   ),
                 ),
+                SizedBox(height: 10,),
 
                 /*ListTile(
                   leading: Icon(OMIcons.dataUsage, color: Colors.deepOrange, size: 30,),
