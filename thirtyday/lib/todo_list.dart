@@ -277,7 +277,7 @@ class NoteListState extends State<NoteList> {
           child: Align(
             alignment: Alignment.bottomLeft,
             child: Text(title, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-          ),
+          ),//ggggg
         ),
       ),
     );
