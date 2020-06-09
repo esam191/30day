@@ -165,14 +165,9 @@ class NoteListState extends State<NoteList> {
                           //subtitle: Text('swipe right', style: TextStyle(fontSize: 16, color: Colors.black, ),),
                           // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
                           trailing: Icon(Icons.keyboard_arrow_right, size: 50), onTap: (){
-<<<<<<< HEAD
-                              _page.animateToPage(3, curve: Curves.ease);
-                               // _page.jumpToPage(1);
-=======
                               _page.animateToPage(1, curve: Curves.easeInQuad, duration: Duration(milliseconds: 300));
                                 
                                 //_page.jumpToPage(1);
->>>>>>> parent of ce94f04... design_Update
                           },
                         ),
                         //Padding(padding: EdgeInsets.all(1)),
@@ -203,10 +198,7 @@ class NoteListState extends State<NoteList> {
                      onPressed: () {
                       debugPrint('FAB clicked');
                       navigateToDetail(Note('', '', 2, false), 'Add Note');
-<<<<<<< HEAD
-=======
                        //navigateToDetail(Note('', '', 2, false), 'Add Note');
->>>>>>> parent of ce94f04... design_Update
                     },
                     tooltip: 'Add Note',
                     child: Icon(Icons.add),
