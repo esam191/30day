@@ -12,6 +12,7 @@ import 'package:thirtyday/drawer.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:thirtyday/FadeAnimation.dart';
 
+
 class NoteList extends StatefulWidget {
 
   @override
@@ -45,17 +46,18 @@ class NoteListState extends State<NoteList> {
       ),
       drawer: MainDrawer(),
       body: PageView(
-        
+
         controller: _page,
         onPageChanged: (int) {
          print('Page Changes to index $int');  
         },
         children: <Widget>[    // main container
           Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 15),
             color: Colors.grey[50],
             child: ListView(
               children: <Widget>[
-                Padding(padding: EdgeInsets.fromLTRB(20, 5, 20, 5),),
+                Padding(padding: EdgeInsets.fromLTRB(50, 5, 50, 5),),
                 Container(
                   height: 220,
                   decoration: BoxDecoration(
@@ -74,8 +76,8 @@ class NoteListState extends State<NoteList> {
                     // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
                     trailing: Icon(OMIcons.localBar, size: 60, color: Colors.white,), onTap: (){},
                   ),
-
                 ),
+
 
                /* ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
@@ -114,10 +116,10 @@ class NoteListState extends State<NoteList> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          makeItem(image: 'images/img5.jpg', title: 'Get Started'),
-                          makeItem(image: 'images/img6.gif', title: 'Quotes'),
-                          makeItem(image: 'images/img7.gif', title: 'Achievements'),
-                          makeItem(image: 'images/img8.jpg', title: 'Support'),
+                          makeItem(image: 'images/img5.jpg', title: 'Get Started', onTap: (){ Navigator.of(context).pushNamed("/CalendarPage");}),
+                          makeItem(image: 'images/img6.gif', title: 'Quotes', onTap: (){ Navigator.of(context).pushNamed("/CalendarPage");}),
+                          makeItem(image: 'images/img7.gif', title: 'Achievements', onTap: (){ Navigator.of(context).pushNamed("/CalendarPage");}),
+                          makeItem(image: 'images/img8.jpg', title: 'Support', onTap: (){ Navigator.of(context).pushNamed("/CalendarPage");}),
                         ],
                       ),
                     )),
@@ -252,20 +254,22 @@ class NoteListState extends State<NoteList> {
       //getNoteListView(),
     );
   }
-  Widget makeItem({image, title}) {
-    return AspectRatio(
-      aspectRatio: 1 / 1,
+  Widget makeItem({image, title, onTap}) {
+    // return AspectRatio
+    return GestureDetector(
+      //aspectRatio: 1 / 1,
+      onTap: onTap,
       child: Container(
         margin: EdgeInsets.only(right: 15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             image: DecorationImage(
                 image: AssetImage(image),
-                fit: BoxFit.cover
+                fit: BoxFit.cover,
             )
         ),
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(
@@ -276,10 +280,12 @@ class NoteListState extends State<NoteList> {
                   ]
               )
           ),
-          child: Align(
+
+          child: GestureDetector(onTap: onTap, child: Align(
             alignment: Alignment.bottomLeft,
             child: Text(title, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-          ),//ggggg
+          ),
+          ),
         ),
       ),
     );
