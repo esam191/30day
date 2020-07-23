@@ -18,7 +18,7 @@ class CalendarState extends State<Calendar> {
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
-    String formattedDate = DateFormat('EEEE, MMM d, yyyy').format(now);
+    String formattedDate = DateFormat('yyyy-MM-dd').format(now);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

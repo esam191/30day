@@ -71,9 +71,9 @@ class NoteListState extends State<NoteList> {
                   child: ListTile(
                     contentPadding: EdgeInsets.all(15),
                     leading: Icon(OMIcons.whatshot, color: Colors.deepOrange, size: 30,),
-                    title: Text('Newbie', style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),),
-                    subtitle: Text('20,365', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold ),),
-                    // subtitle: Text(DateFormat("dd-MM-yyyy").format(DateTime.now()),),
+                    title: Text('20,365', style: TextStyle(fontSize: 40, color: Colors.white, fontWeight: FontWeight.bold),),
+                    //subtitle: Text('20,365', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold ),),
+                    subtitle: Text(DateFormat("EEEE, MMM d").format(DateTime.now()), style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
                     trailing: Icon(OMIcons.localBar, size: 60, color: Colors.white,), onTap: (){},
                   ),
                 ),
