@@ -4,7 +4,7 @@ A challenge tracking mobile application that allows users to add a list of chall
 
 ## Tech 
 
-'Flutter', 'Dart'
+`Flutter`, `Dart`
  
 ## Demo
 
