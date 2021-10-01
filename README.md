@@ -2,4 +2,4 @@
  
 # Demo
 
-![Alt text](/thirtyday/images/login.jpg?raw=true "Sign Up Page")
+![Alt text](/demo.gif?raw=true "Sign Up Page")
